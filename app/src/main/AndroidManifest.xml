@@ -10,8 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smidig">
-        <activity android:name=".LoginActivity"
-            android:label="Login"/>
+        <activity android:name=".MapsActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${GOOGLE_MAPS_API_KEY}" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
