@@ -16,6 +16,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.MapStyleOptions
 
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
@@ -41,6 +42,11 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         googleMap.setOnMyLocationButtonClickListener(this)
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
+        map.setMapStyle(
+            MapStyleOptions.loadRawResourceStyle(
+                this, R.raw.style_json
+            )
+        )
     }
 
     /**
