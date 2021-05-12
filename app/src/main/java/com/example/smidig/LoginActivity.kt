@@ -13,8 +13,13 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         var btnContinue = findViewById<Button>(R.id.continues)
+        var btnMap = findViewById<Button>(R.id.register)
         btnContinue.setOnClickListener {
             val i = Intent(this, FrontPageActivity::class.java)
+            startActivity(i)
+        }
+        btnMap.setOnClickListener {
+            val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         }
     }
