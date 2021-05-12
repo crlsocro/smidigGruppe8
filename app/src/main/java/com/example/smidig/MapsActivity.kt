@@ -14,6 +14,8 @@ import com.example.smidig.PermissionUtils.requestPermission
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
@@ -30,6 +32,12 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
 
     override fun onMapReady(googleMap: GoogleMap?) {
         map = googleMap ?: return
+        map.setMinZoomPreference(13f)
+        val osloCoordinates = LatLngBounds(
+            LatLng(59.910, 10.720),
+            LatLng(59.913, 10.769)
+        )
+        map.setLatLngBoundsForCameraTarget(osloCoordinates)
         googleMap.setOnMyLocationButtonClickListener(this)
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
