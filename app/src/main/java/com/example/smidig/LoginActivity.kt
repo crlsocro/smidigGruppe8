@@ -17,6 +17,11 @@ class LoginActivity : AppCompatActivity() {
             val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         }
+        var btnSignUp = findViewById<Button>(R.id.register)
+        btnSignUp.setOnClickListener {
+            val i = Intent(this, SignUpActivity::class.java)
+            startActivity(i)
+        }
 
     }
 
