@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 
 
+
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,11 @@ class LoginActivity : AppCompatActivity() {
         var btnSignUp = findViewById<Button>(R.id.register)
         btnSignUp.setOnClickListener {
             val i = Intent(this, SignUpActivity::class.java)
+            startActivity(i)
+        }
+        var btnGuest = findViewById<Button>(R.id.continues)
+        btnGuest.setOnClickListener {
+            val i = Intent(this, QuizActivity::class.java)
             startActivity(i)
         }
 
