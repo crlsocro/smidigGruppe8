@@ -6,6 +6,7 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -50,7 +51,32 @@ class QuizActivity: AppCompatActivity() {
             startActivity(i)
         }
     }
+    fun onRadioButtonClicked(view: View) {
+        if (view is RadioButton) {
+            // Is the button now checked?
+            val checked = view.isChecked
 
+            // Check which radio button was clicked
+            when (view.getId()) {
+                R.id.option_one ->
+                    if (checked) {
+                        // Test1
+                    }
+                R.id.option_two ->
+                    if (checked) {
+                        // Test 2
+                    }
+                R.id.option_three ->
+                    if (checked) {
+                        // Test 3
+                    }
+                R.id.option_four ->
+                    if (checked) {
+                        // Test 4
+                    }
+            }
+        }
+    }
 }
 
 //https://www.youtube.com/watch?v=b21fiIyOW4A&t=4064s&ab_channel=tutorialsEU

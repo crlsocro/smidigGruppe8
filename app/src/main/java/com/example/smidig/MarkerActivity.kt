@@ -1,7 +1,6 @@
 package com.example.smidig
 
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
@@ -10,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class MarkerActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marker)
