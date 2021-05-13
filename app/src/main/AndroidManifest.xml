@@ -23,6 +23,7 @@
             android:label="Login" />
         <activity android:name=".SignUpActivity"/>
         <activity android:name=".FrontPageActivity" />
+        <activity android:name=".MarkerActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
