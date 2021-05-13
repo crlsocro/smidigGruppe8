@@ -6,16 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MarkerActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/marker_title"
-        tools:ignore="MissingConstraints" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/info"
+        android:layout_margin="20dp"
+        android:id="@+id/pinMap"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:id="@+id/info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/marker_description"
-        tools:ignore="MissingConstraints" />
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:menu="@menu/footer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
