@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smidig">
-        <activity android:name=".SigninActivity"></activity>
+        <activity android:name=".SigninActivity" android:label="Login" />
         <activity android:name=".SummaryActivity" />
         <activity android:name=".MapsActivity" />
 
@@ -20,9 +20,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBjL_V5WvSQ3XTrsg1FB125DnTkX7Zz6sk" />
 
-        <activity
-            android:name=".LoginActivity"
-            android:label="Login" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".FrontPageActivity" />
         <activity android:name=".SplashActivity">
