@@ -1,11 +1,12 @@
 package com.example.smidig
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
 import com.example.smidig.PermissionUtils.PermissionDeniedDialog.newInstance
@@ -14,14 +15,12 @@ import com.example.smidig.PermissionUtils.requestPermission
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.LatLngBounds
-import com.google.android.gms.maps.model.MapStyleOptions
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
-        GoogleMap.OnMyLocationClickListener, OnMapReadyCallback, OnRequestPermissionsResultCallback {
+        GoogleMap.OnMyLocationClickListener, OnMapReadyCallback, OnRequestPermissionsResultCallback,
+        GoogleMap.OnMarkerClickListener {
 
     private var permissionDenied = false
     private lateinit var map: GoogleMap
@@ -35,6 +34,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
     override fun onMapReady(googleMap: GoogleMap?) {
         map = googleMap ?: return
         map.setMinZoomPreference(13f)
+        map.setOnMarkerClickListener(this)
         val osloCoordinates = LatLngBounds(
             LatLng(59.910, 10.720),
             LatLng(59.913, 10.769)
@@ -44,10 +44,10 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
         googleMap.apply {
-            val marker = LatLng(59.910, 10.720)
+            val testMarker = LatLng(59.910, 10.720)
             addMarker(
                     MarkerOptions()
-                            .position(marker)
+                            .position(testMarker)
                             .title("INSERT MARKER HERE")
             )
         }
@@ -56,6 +56,12 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                 this, R.raw.style_json
             )
         )
+    }
+
+    override fun onMarkerClick(marker: Marker?): Boolean {
+        val intent = Intent(this, MarkerActivity::class.java)
+        startActivity(intent)
+        return false
     }
 
     /**
