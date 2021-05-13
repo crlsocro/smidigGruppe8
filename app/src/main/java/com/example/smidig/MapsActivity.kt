@@ -17,6 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MapStyleOptions
+import com.google.android.gms.maps.model.MarkerOptions
 
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
@@ -42,6 +43,14 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         googleMap.setOnMyLocationButtonClickListener(this)
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
+        googleMap.apply {
+            val marker = LatLng(59.910, 10.720)
+            addMarker(
+                    MarkerOptions()
+                            .position(marker)
+                            .title("INSERT MARKER HERE")
+            )
+        }
         map.setMapStyle(
             MapStyleOptions.loadRawResourceStyle(
                 this, R.raw.style_json
