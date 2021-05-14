@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.MapsActivity
 import com.example.smidig.R
+import com.example.smidig.SummaryActivity
 
 class QuizActivity: AppCompatActivity() {
 
@@ -46,7 +47,7 @@ class QuizActivity: AppCompatActivity() {
 
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
-            val i = Intent(this, MapsActivity::class.java)
+            val i = Intent(this, SummaryActivity::class.java)
             startActivity(i)
         }
     }
