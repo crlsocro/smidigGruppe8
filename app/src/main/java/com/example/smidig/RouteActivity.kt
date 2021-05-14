@@ -63,7 +63,7 @@ GoogleMap.OnMarkerClickListener {
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {
-        val intent = Intent(this, SummaryActivity::class.java)
+        val intent = Intent(this, PostActivity::class.java)
         startActivity(intent)
         return false
     }
