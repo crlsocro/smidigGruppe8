@@ -12,17 +12,19 @@
         android:layout_height="576dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/congratsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:text="GRATULERER!"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,10 +33,10 @@
             android:id="@+id/completedText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Du har fullført"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/congratsText" />
@@ -54,10 +56,10 @@
             android:id="@+id/onTimeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="på tiden"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/trackNameText" />
@@ -77,10 +79,10 @@
             android:id="@+id/rightAnswersText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="og du svarte riktig på"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/timeText" />
@@ -100,10 +102,10 @@
             android:id="@+id/achievementsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:text="Tildelte merker"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/correctQuestionsText" />
@@ -122,8 +124,8 @@
             android:id="@+id/achievementIcon2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginEnd="30dp"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
             app:layout_constraintEnd_toStartOf="@+id/achievementIcon3"
             app:layout_constraintTop_toBottomOf="@+id/achievementsText"
             app:srcCompat="@drawable/ic_baseline_local_activity_24" />
@@ -142,11 +144,23 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="80dp"
             android:text="DEL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/achievementIcon2" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tilbake"
+            android:layout_marginEnd="80dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/achievementIcon3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -183,6 +197,7 @@
             android:id="@+id/backIcon"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:onClick="toMap"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
