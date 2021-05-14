@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.quiz
 
 object Constants {
     fun getQuestions(): ArrayList<Questions>{

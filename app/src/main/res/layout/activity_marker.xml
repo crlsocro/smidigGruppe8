@@ -15,13 +15,76 @@
         android:layout_margin="20dp"
         android:id="@+id/pinMap"/>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
         android:id="@+id/info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/quantum_grey">
+        <TextView
+            android:id="@+id/grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Egner seg for: allle" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_pin"
+            android:layout_toRightOf="@id/grade" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/quantum_grey"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="-25dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_starfull"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_starfull"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_starfull"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_starhalf"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beskrivelse:
+
+           Sed felis urna, tempus nec egestas eget, congue eu purus. Fusce varius, ante in fermentum placerat, tellus augue rutrum diam, in tincidunt nibh urna sed orci. Duis vehicula mauris a diam sodales, quis bibendum dolor pellentesque.
+           Curabitur vitae condimentum neque. Nunc ut ligula mauris. "
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:background="@color/quantum_grey"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fullfør"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="150dp"
+            />
+
+    </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
