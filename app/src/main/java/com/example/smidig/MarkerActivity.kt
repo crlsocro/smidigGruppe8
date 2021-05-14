@@ -14,6 +14,7 @@ class MarkerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marker)
+        supportActionBar?.hide()
 
 
         var webView = findViewById<WebView>(R.id.pinMap)

@@ -8,7 +8,7 @@
     tools:context=".PostActivity">
 
     <Button
-        android:id="@+id/completeText"
+        android:id="@+id/completeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fullfør"
