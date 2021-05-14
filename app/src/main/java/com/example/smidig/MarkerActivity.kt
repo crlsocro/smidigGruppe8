@@ -31,7 +31,7 @@ class MarkerActivity : AppCompatActivity() {
 
         var completeBtn = findViewById<Button>(R.id.completeBtn)
         completeBtn.setOnClickListener{
-            val i = Intent(this, PostActivity::class.java)
+            val i = Intent(this, RouteActivity::class.java)
             startActivity(i)
         }
 

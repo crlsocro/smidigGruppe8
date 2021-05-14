@@ -41,10 +41,16 @@ GoogleMap.OnMarkerClickListener {
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
         googleMap.apply {
-            val testMarker = LatLng(59.910, 10.720)
+            val testMarker = LatLng(59.912, 10.724)
             addMarker(
                 MarkerOptions()
                     .position(testMarker)
+                    .title("INSERT MARKER HERE")
+            )
+            val testMarker2 = LatLng(59.924, 10.723)
+            addMarker(
+                MarkerOptions()
+                    .position(testMarker2)
                     .title("INSERT MARKER HERE")
             )
         }
