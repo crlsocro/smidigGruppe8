@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smidig">
-        <activity android:name=".SigninActivity" android:label="Login" />
+        <activity android:name=".RouteActivity"></activity>
+        <activity
+            android:name=".SigninActivity"
+            android:label="Login" />
         <activity android:name=".SummaryActivity" />
         <activity android:name=".MapsActivity" />
 
