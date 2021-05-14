@@ -18,9 +18,6 @@
             android:name=".SigninActivity"
             android:label="Login" />
         <activity android:name=".RouteActivity"></activity>
-        <activity
-            android:name=".SigninActivity"
-            android:label="Login" />
         <activity android:name=".SummaryActivity" />
         <activity android:name=".MapsActivity" />
 
