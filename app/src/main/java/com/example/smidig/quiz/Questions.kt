@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.quiz
 
 data class Questions (
     val id: Int,
