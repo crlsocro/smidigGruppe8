@@ -21,7 +21,7 @@ class SigninActivity : AppCompatActivity() {
     }
 
     fun toRegister(view: View) {
-        val intent = Intent(this, QuizActivity::class.java).apply {
+        val intent = Intent(this, SignUpActivity::class.java).apply {
 
         }
         startActivity(intent)
