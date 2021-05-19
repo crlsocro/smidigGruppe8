@@ -63,7 +63,7 @@
         android:layout_marginLeft="40dp"
         android:background="@color/white"
         />
-    <TextView
+   <!-- <TextView
         android:id="@+id/repeatPassword"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email"
         android:layout_marginLeft="40dp"
         android:background="@color/white"
-        />
+        />-->
     <CheckBox
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
@@ -118,6 +118,7 @@
         android:layout_marginLeft="40dp"/>
 
     <Button
+        android:id="@+id/submitR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Registrer deg"
