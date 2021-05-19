@@ -21,6 +21,14 @@ GoogleMap.OnMarkerClickListener {
 
     private var permissionDenied = false
     private lateinit var map: GoogleMap
+    var mrkr = MarkerOptions()
+            .position(LatLng(59.910, 10.720))
+            .title("right")
+
+    var mrkr2 = MarkerOptions()
+            .position(LatLng(59.920, 10.730))
+            .title("wrong")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -34,37 +42,26 @@ GoogleMap.OnMarkerClickListener {
         map.setMinZoomPreference(13f)
         map.setOnMarkerClickListener(this)
         val osloCoordinates = LatLngBounds(
-            LatLng(59.910, 10.720),
-            LatLng(59.913, 10.769)
+                LatLng(59.910, 10.720),
+                LatLng(59.913, 10.769)
         )
         map.setLatLngBoundsForCameraTarget(osloCoordinates)
         googleMap.setOnMyLocationButtonClickListener(this)
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
-        googleMap.apply {
-            val testMarker = LatLng(59.912, 10.724)
-            addMarker(
-                MarkerOptions()
-                    .position(testMarker)
-                    .title("INSERT MARKER HERE")
-            )
-            val testMarker2 = LatLng(59.924, 10.723)
-            addMarker(
-                MarkerOptions()
-                    .position(testMarker2)
-                    .title("INSERT MARKER HERE")
-            )
-        }
+        map.addMarker(mrkr)
+        map.addMarker(mrkr2)
         map.setMapStyle(
-            MapStyleOptions.loadRawResourceStyle(
-                this, R.raw.style_json
-            )
+                MapStyleOptions.loadRawResourceStyle(
+                        this, R.raw.style_json
+                )
         )
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {
-        val intent = Intent(this, PostActivity::class.java)
-        startActivity(intent)
+        when(marker?.title) {
+            mrkr.title -> startActivity(Intent(this, PostActivity::class.java))
+        }
         return false
     }
 
