@@ -6,24 +6,25 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [User::class], version = 1)
-abstract class UserDatabase: RoomDatabase() {
-    abstract fun getUDao(): UserDao
+@Database(entities = [Quiz::class], version = 1)
+abstract class MultiDatabase: RoomDatabase() {
+    abstract fun getQDao(): QuizDao
+    abstract  fun getMDao(): MarkerDao
 
     companion object{
-        var DB_FILENAME = "userDB"
+        var DB_FILENAME = "DB"
 
         @Volatile
-        private var INSTANCE: UserDatabase? = null
+        private var INSTANCE: com.example.smidig.database.MultiDatabase? = null
 
-        fun get(context: Context): UserDatabase{
+        fun get(context: Context): com.example.smidig.database.MultiDatabase {
             val tmp = INSTANCE
             if (tmp != null) {
                 return tmp
             }
             synchronized(this){
                 val instance =
-                    Room.databaseBuilder(context.applicationContext, UserDatabase::class.java, DB_FILENAME)
+                    Room.databaseBuilder(context.applicationContext, MultiDatabase::class.java, DB_FILENAME)
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build()
