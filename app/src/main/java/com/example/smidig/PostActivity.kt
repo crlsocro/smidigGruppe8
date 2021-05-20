@@ -27,15 +27,11 @@ class PostActivity : AppCompatActivity() {
         println(clickedPin)
 
         if(clickedPin == "1") {
-            Toast.makeText(applicationContext,"YEEEES",Toast.LENGTH_SHORT).show()
-            println("jjssssjssjsjjjsjsssssssssssAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            println("dette er post 1")
+        } else if (clickedPin == "2") {
+            println("dette er påsssst 2")
         }
 
-        /*
-        when(clickedPin) {
-            1 -> Toast.makeText(applicationContext,"YEEEES",Toast.LENGTH_SHORT).show()
-            2 -> Toast.makeText(applicationContext,"NO PLZ",Toast.LENGTH_SHORT).show()
-        }
-        */
     }
+
 }
