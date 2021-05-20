@@ -49,8 +49,27 @@ GoogleMap.OnMarkerClickListener {
         googleMap.setOnMyLocationButtonClickListener(this)
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
-        map.addMarker(mrkr)
-        map.addMarker(mrkr2)
+
+        println(intent?.getStringExtra("markerValue"))
+
+        when(intent.getStringExtra("markerValue")) {
+            "1" -> {
+                map.apply {
+                    mrkr.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                    addMarker(mrkr)
+                    addMarker(mrkr2) }
+            }
+            "2" -> {
+                map.apply {
+                    mrkr2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                    addMarker(mrkr)
+                    addMarker(mrkr2) }
+            }
+            else -> {
+                map.addMarker(mrkr)
+                map.addMarker(mrkr2)
+            }
+        }
         map.setMapStyle(
                 MapStyleOptions.loadRawResourceStyle(
                         this, R.raw.style_json
@@ -62,15 +81,17 @@ GoogleMap.OnMarkerClickListener {
 
         if(marker?.title == mrkr.title) {
             val intent = Intent(this, PostActivity::class.java)
-            intent.putExtra("value", "1")
+            intent.putExtra("markerValue", "1")
             startActivity(intent)
+            marker?.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         } else if(marker?.title == mrkr2.title) {
             val intent = Intent(this, PostActivity::class.java)
-            intent.putExtra("value", "2")
+            intent.putExtra("markerValue", "2")
             startActivity(intent)
+            marker?.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
         }
 
-        return false
+        return true
     }
 
     /**

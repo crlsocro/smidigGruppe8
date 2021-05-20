@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.MapsActivity
 import com.example.smidig.R
+import com.example.smidig.RouteActivity
 import com.example.smidig.SummaryActivity
 
 class QuizActivity: AppCompatActivity() {
@@ -47,8 +48,11 @@ class QuizActivity: AppCompatActivity() {
 
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
-            val i = Intent(this, SummaryActivity::class.java)
+            val i = Intent(this, RouteActivity::class.java)
+            var clickedPin = intent.getStringExtra("markerValue")
+            i.putExtra("markerValue", clickedPin)
             startActivity(i)
+            println(clickedPin)
         }
     }
     fun onRadioButtonClicked(view: View) {
