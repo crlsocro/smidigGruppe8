@@ -8,11 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.database.User
-import com.example.smidig.database.UserViewModel
+
 
 class SignUpActivity : AppCompatActivity() {
-
-    private lateinit var viewModelU: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,10 +26,6 @@ class SignUpActivity : AppCompatActivity() {
         fun sendUserToDatabase(view: View) {
             val email = findViewById<EditText>(R.id.editEmail)
             val password = findViewById<EditText>(R.id.editPassword)
-
-            viewModelU = UserViewModel(this)
-
-
             var testB = User(0, "Test", "Foo@test.com", "food")
 
         }
