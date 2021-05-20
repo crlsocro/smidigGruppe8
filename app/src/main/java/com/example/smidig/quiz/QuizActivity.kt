@@ -7,10 +7,10 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smidig.MapsActivity
 import com.example.smidig.R
 import com.example.smidig.RouteActivity
 import com.example.smidig.SummaryActivity
+
 
 class QuizActivity: AppCompatActivity() {
 
@@ -64,19 +64,19 @@ class QuizActivity: AppCompatActivity() {
             when (view.getId()) {
                 R.id.option_one ->
                     if (checked) {
-                        // Test1
+                        selectedOption = 0
                     }
                 R.id.option_two ->
                     if (checked) {
-                        // Test 2
+                        selectedOption = 1
                     }
                 R.id.option_three ->
                     if (checked) {
-                        // Test 3
+                        selectedOption = 2
                     }
                 R.id.option_four ->
                     if (checked) {
-                        // Test 4
+                        selectedOption = 3
                     }
             }
         }
