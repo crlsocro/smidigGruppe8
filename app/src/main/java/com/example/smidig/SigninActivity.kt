@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import com.example.smidig.History.HistoryActivity
 import com.example.smidig.quiz.QuizActivity
 
 class SigninActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class SigninActivity : AppCompatActivity() {
 
         var btnSignin = findViewById<Button>(R.id.SigninBtn)
         btnSignin.setOnClickListener {
-            val i = Intent(this, MapsActivity::class.java)
+            val i = Intent(this, HistoryActivity::class.java)
             startActivity(i)
         }
     }
