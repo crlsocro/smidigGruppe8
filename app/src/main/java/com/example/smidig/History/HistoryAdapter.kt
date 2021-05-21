@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smidig.databinding.ItemHistoryViewBinding
-import com.squareup.picasso.Picasso
+
 
 class HistoryAdapter(private var list: List<HistoryStats>): RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 

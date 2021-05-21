@@ -13,13 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smidig">
-        <activity android:name=".Marker"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".PostActivity" />
+        <activity android:name=".PostActivity"></activity>
         <activity
             android:name=".SigninActivity"
             android:label="Login" />
-        <activity android:name=".RouteActivity" />
+        <activity android:name=".RouteActivity"></activity>
         <activity android:name=".SummaryActivity" />
         <activity android:name=".MapsActivity" />
 
@@ -31,6 +29,8 @@
         <activity android:name=".FrontPageActivity" />
         <activity android:name=".MarkerActivity" />
         <activity android:name=".quiz.QuizActivity" />
+        <activity android:name=".History.HistoryActivity" />
+        <activity android:name=".History.InfoActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
