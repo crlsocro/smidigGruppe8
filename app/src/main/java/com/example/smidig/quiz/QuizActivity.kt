@@ -52,9 +52,10 @@ class QuizActivity: AppCompatActivity() {
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
 
-            //var qdao : MultiDatabase.getQDao()
+            var quizDAO : QuizDao = MultiDatabase.get(this).getQDao()
+
             var quizTest : Quiz = Quiz(0, "Test", "test","test")
-            //QuizDao.addQuiz(quizTest)
+            quizDAO.addQuiz(quizTest)
 
             val i = Intent(this, RouteActivity::class.java)
             var clickedPin = intent.getStringExtra("markerValue")
