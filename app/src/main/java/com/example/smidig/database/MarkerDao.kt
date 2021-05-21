@@ -16,6 +16,4 @@ interface MarkerDao {
     @Query("SELECT * FROM marker_table")
     fun getAllMarkers(): List<Marker>
 
-    @Query("SELECT * FROM marker_table WHERE markerID = :markerID ")
-    fun getMarkerWithMarkerId(markerID: Int): Marker
 }

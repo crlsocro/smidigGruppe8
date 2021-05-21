@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.R
 import com.example.smidig.RouteActivity
 import com.example.smidig.SummaryActivity
+import com.example.smidig.database.MultiDatabase
+import com.example.smidig.database.Quiz
+import com.example.smidig.database.QuizDao
 
 
 class QuizActivity: AppCompatActivity() {
@@ -48,6 +51,11 @@ class QuizActivity: AppCompatActivity() {
 
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
+
+            //var qdao : MultiDatabase.getQDao()
+            var quizTest : Quiz = Quiz(0, "Test", "test","test")
+            //QuizDao.addQuiz(quizTest)
+
             val i = Intent(this, RouteActivity::class.java)
             var clickedPin = intent.getStringExtra("markerValue")
             i.putExtra("markerValue", clickedPin)

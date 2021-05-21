@@ -5,7 +5,7 @@ import androidx.room.*
 @Dao
 interface QuizDao {
     @Insert
-    fun addUser(quiz: Quiz)
+    fun addQuiz(quiz: Quiz)
 
     @Update
     fun update(quiz: Quiz)
@@ -16,6 +16,6 @@ interface QuizDao {
     @Query("SELECT * FROM quiz_table")
     fun getAllQuiz(): List<Quiz>
 
-    @Query("SELECT * FROM quiz_table WHERE quizID = :quizID ")
-    fun getQuizWithQuizId(QuizID: Int): Quiz
+    @Query("SELECT * FROM quiz_table WHERE quizID = :ID ")
+    fun getQuizWithQuizId(ID: Int): Quiz
 }
