@@ -21,6 +21,7 @@ class QuizActivity: AppCompatActivity() {
     private var currentQList: ArrayList<Questions>? = null
     private var selectedOption: Int = 0
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizpage)
@@ -56,6 +57,10 @@ class QuizActivity: AppCompatActivity() {
 
             var quizTest : Quiz = Quiz(0, "Test", "test","test")
             quizDAO.addQuiz(quizTest)
+
+            var test : Quiz = quizDAO.getQuizWithQuizId(1)
+            println("test = " + test)
+            println("test.size")
 
             val i = Intent(this, RouteActivity::class.java)
             var clickedPin = intent.getStringExtra("markerValue")
