@@ -79,12 +79,18 @@
             android:id="@+id/completeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="START"
-            android:gravity="center"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="150dp"
-            />
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="START" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_action_note"
+            android:textColor="@color/white"
+            android:lines="2"
+            android:text="Inneholder lydfiler \n som kan leses" />
     </LinearLayout>
 
 

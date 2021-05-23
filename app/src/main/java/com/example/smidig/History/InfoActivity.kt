@@ -10,7 +10,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.R
 import com.example.smidig.RouteActivity
-import com.example.smidig.databinding.ActivityHistoryBinding
+
 
 class InfoActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
