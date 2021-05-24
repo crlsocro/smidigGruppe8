@@ -141,7 +141,7 @@ GoogleMap.OnMarkerClickListener {
         val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
         for(i in 1..5) {
             if(marker?.title == mrkrArray[i-1].title) {
-                markerDao.setClicked(i)
+                markerDao.setClicked(i, 1)
                 val intent = Intent(this, PostActivity::class.java)
                 startActivity(intent)
             }
