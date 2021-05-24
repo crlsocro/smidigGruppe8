@@ -1,22 +1,45 @@
 package com.example.smidig
 
+import android.content.ClipData
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.SeekBar
-import android.widget.Toast
+import android.widget.*
+import com.example.smidig.History.HistoryActivity
 import com.example.smidig.quiz.QuizActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
 class PostActivity : AppCompatActivity() {
 
     lateinit var runnable: Runnable
     private var handler = Handler()
+
+    private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+            R.id.homepage -> {
+                val intent = Intent(this@PostActivity, SigninActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.history -> {
+                val intent = Intent(this@PostActivity, SignUpActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +52,14 @@ class PostActivity : AppCompatActivity() {
             i.putExtra("markerValue", clickedPin)
             startActivity(i)
         }
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, RouteActivity::class.java)
+            startActivity(i)
+        }
 
         var clickedPin = intent?.getStringExtra("markerValue")
 
@@ -37,7 +68,6 @@ class PostActivity : AppCompatActivity() {
         } else if (clickedPin == "2") {
             println("dette er påsssst 2")
         }
-
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
 

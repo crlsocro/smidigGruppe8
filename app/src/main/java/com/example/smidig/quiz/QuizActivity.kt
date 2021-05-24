@@ -4,18 +4,43 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smidig.R
-import com.example.smidig.RouteActivity
-import com.example.smidig.SummaryActivity
+import com.example.smidig.*
+import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.MultiDatabase
 import com.example.smidig.database.Quiz
 import com.example.smidig.database.QuizDao
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class QuizActivity: AppCompatActivity() {
+
+
+    private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+            R.id.homepage -> {
+                val intent = Intent(this@QuizActivity, SigninActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.history -> {
+                val intent = Intent(this@QuizActivity, SignUpActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+
+    }
 
     private var mCurrentP: Int = 1
     private var currentQList: ArrayList<Questions>? = null
@@ -28,6 +53,15 @@ class QuizActivity: AppCompatActivity() {
         supportActionBar?.hide()
         currentQList = Constants.getQuestions()
         setQuestion()
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation5)
+        bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, PostActivity::class.java)
+            startActivity(i)
+        }
 
     }
     private fun setQuestion() {

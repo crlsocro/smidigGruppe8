@@ -57,7 +57,7 @@
             android:id="@+id/pageInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LØYPENAVN - OPPSUMMERING"
+            android:text="Historien om Oslo"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +85,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView3"
+        android:id="@+id/bottom_navigation3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -101,7 +101,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="575dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView3"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         tools:context="com.example.currentplacedetailsonmap.MapsActivityCurrentPlace" />
