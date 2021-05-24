@@ -22,7 +22,7 @@ class SigninActivity : AppCompatActivity() {
 
         var btnSignin = findViewById<Button>(R.id.SigninBtn)
         btnSignin.setOnClickListener {
-            val i = Intent(this, HistoryActivity::class.java)
+            val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         }
     }

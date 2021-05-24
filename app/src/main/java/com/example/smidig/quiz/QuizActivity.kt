@@ -30,7 +30,7 @@ class QuizActivity: AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@QuizActivity, SignUpActivity::class.java)
+                val intent = Intent(this@QuizActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

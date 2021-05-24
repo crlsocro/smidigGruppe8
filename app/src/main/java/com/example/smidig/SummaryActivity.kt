@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.RatingBar
 import android.widget.Toast
+import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SummaryActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class SummaryActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@SummaryActivity, SignUpActivity::class.java)
+                val intent = Intent(this@SummaryActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

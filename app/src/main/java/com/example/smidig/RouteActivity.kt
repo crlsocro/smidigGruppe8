@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
 import com.example.smidig.History.InfoActivity
@@ -74,7 +75,7 @@ GoogleMap.OnMarkerClickListener {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@RouteActivity, SignUpActivity::class.java)
+                val intent = Intent(this@RouteActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
