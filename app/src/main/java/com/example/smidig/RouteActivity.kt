@@ -39,11 +39,11 @@ GoogleMap.OnMarkerClickListener {
             .title("3")
 
     var mrkr4 = MarkerOptions()
-            .position(LatLng(59.940, 10.740))
+            .position(LatLng(59.920, 10.740))
             .title("4")
 
     var mrkr5 = MarkerOptions()
-            .position(LatLng(59.950, 10.720))
+            .position(LatLng(59.910, 10.730))
             .title("5")
 
     val mrkrArray = arrayOf(mrkr, mrkr2, mrkr3, mrkr4, mrkr5)
@@ -90,11 +90,11 @@ GoogleMap.OnMarkerClickListener {
 
         val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
         if(markerDao.checkEmpty() == 0) {
-            var markerTest : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.910, 10.720,false, "fsafs")
-            var markerTest2 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.920, 10.730,false, "fsafs")
-            var markerTest3 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.930, 10.750,false, "fsafs")
-            var markerTest4 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.940, 10.740,false, "fsafs")
-            var markerTest5 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.950, 10.720,false, "fsafs")
+            var markerTest : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, mrkr.position.latitude, mrkr.position.longitude,false, "fsafs")
+            var markerTest2 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, mrkr2.position.latitude, mrkr2.position.longitude,false, "fsafs")
+            var markerTest3 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, mrkr3.position.latitude, mrkr3.position.longitude,false, "fsafs")
+            var markerTest4 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, mrkr4.position.latitude, mrkr4.position.longitude,false, "fsafs")
+            var markerTest5 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, mrkr5.position.latitude, mrkr5.position.longitude,false, "fsafs")
             markerDao.addMarker(markerTest)
             markerDao.addMarker(markerTest2)
             markerDao.addMarker(markerTest3)
