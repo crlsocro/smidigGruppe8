@@ -9,10 +9,16 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.smidig.database.MarkerDao
+import com.example.smidig.database.MultiDatabase
+import com.example.smidig.database.Quiz
+import com.example.smidig.database.QuizDao
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import java.lang.Error
+import java.lang.NullPointerException
 
 class RouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
 GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
@@ -23,11 +29,25 @@ GoogleMap.OnMarkerClickListener {
     private lateinit var map: GoogleMap
     var mrkr = MarkerOptions()
             .position(LatLng(59.910, 10.720))
-            .title("right")
+            .title("1")
 
     var mrkr2 = MarkerOptions()
             .position(LatLng(59.920, 10.730))
-            .title("wrong")
+            .title("2")
+
+    var mrkr3 = MarkerOptions()
+            .position(LatLng(59.930, 10.750))
+            .title("3")
+
+    var mrkr4 = MarkerOptions()
+            .position(LatLng(59.940, 10.740))
+            .title("4")
+
+    var mrkr5 = MarkerOptions()
+            .position(LatLng(59.950, 10.720))
+            .title("5")
+
+    val mrkrArray = arrayOf(mrkr, mrkr2, mrkr3, mrkr4, mrkr5)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +58,21 @@ GoogleMap.OnMarkerClickListener {
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
+
+        val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
+        if(markerDao.checkEmpty() == 0) {
+            var markerTest : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.910, 10.720,false, "fsafs")
+            var markerTest2 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.920, 10.730,false, "fsafs")
+            var markerTest3 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.930, 10.750,false, "fsafs")
+            var markerTest4 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.940, 10.740,false, "fsafs")
+            var markerTest5 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.950, 10.720,false, "fsafs")
+            markerDao.addMarker(markerTest)
+            markerDao.addMarker(markerTest2)
+            markerDao.addMarker(markerTest3)
+            markerDao.addMarker(markerTest4)
+            markerDao.addMarker(markerTest5)
+        }
+
         map = googleMap ?: return
         map.setMinZoomPreference(13f)
         map.setOnMarkerClickListener(this)
@@ -52,24 +87,19 @@ GoogleMap.OnMarkerClickListener {
 
         println(intent?.getStringExtra("markerValue"))
 
-        when(intent.getStringExtra("markerValue")) {
-            "1" -> {
-                map.apply {
-                    mrkr.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-                    addMarker(mrkr)
-                    addMarker(mrkr2) }
-            }
-            "2" -> {
-                map.apply {
-                    mrkr2.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-                    addMarker(mrkr)
-                    addMarker(mrkr2) }
-            }
-            else -> {
-                map.addMarker(mrkr)
-                map.addMarker(mrkr2)
-            }
+        map.apply {
+                for (i in 1..5) {
+                    var clicked = markerDao.getMarker(i).clicked
+                    if (clicked) {
+                        mrkrArray[i-1].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                        addMarker(mrkrArray[i-1])
+                    } else {
+                        addMarker(mrkrArray[i-1])
+                    }
+
+                }
         }
+
         map.setMapStyle(
                 MapStyleOptions.loadRawResourceStyle(
                         this, R.raw.style_json
@@ -78,17 +108,16 @@ GoogleMap.OnMarkerClickListener {
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {
+        val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
+        for(i in 1..5) {
+            if(marker?.title == mrkrArray[i-1].title) {
+                markerDao.setClicked(i)
+                val intent = Intent(this, PostActivity::class.java)
+                startActivity(intent)
+            }
+            else {
 
-        if(marker?.title == mrkr.title) {
-            val intent = Intent(this, PostActivity::class.java)
-            intent.putExtra("markerValue", "1")
-            startActivity(intent)
-            marker?.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-        } else if(marker?.title == mrkr2.title) {
-            val intent = Intent(this, PostActivity::class.java)
-            intent.putExtra("markerValue", "2")
-            startActivity(intent)
-            marker?.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+            }
         }
 
         return true

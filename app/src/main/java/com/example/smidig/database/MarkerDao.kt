@@ -16,4 +16,13 @@ interface MarkerDao {
     @Query("SELECT * FROM marker_table")
     fun getAllMarkers(): List<Marker>
 
+    @Query("SELECT * FROM marker_table WHERE markerID = :id")
+    fun getMarker(id: Int): Marker
+
+    @Query("UPDATE marker_table SET clicked = 1 WHERE markerID = :id")
+    fun setClicked(id: Int)
+
+    @Query("SELECT COUNT(markerID) FROM marker_table")
+    fun checkEmpty(): Int
+
 }
