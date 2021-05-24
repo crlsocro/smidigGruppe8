@@ -16,11 +16,35 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback, OnRequestPermissionsResultCallback,
         GoogleMap.OnMarkerClickListener {
+
+    private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+            R.id.homepage -> {
+                val intent = Intent(this@MapsActivity, SigninActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.history -> {
+                val intent = Intent(this@MapsActivity, SignUpActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+
+    }
 
     private var permissionDenied = false
     private lateinit var map: GoogleMap
@@ -30,6 +54,9 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         supportActionBar?.hide()
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation3)
+        bottomNavigation.setOnNavigationItemSelectedListener(navigation)
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {

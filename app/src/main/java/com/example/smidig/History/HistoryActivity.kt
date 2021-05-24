@@ -1,5 +1,6 @@
 package com.example.smidig.History
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.ImageView
@@ -9,10 +10,36 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.smidig.R
+import com.example.smidig.SignUpActivity
+import com.example.smidig.SigninActivity
 import com.example.smidig.databinding.ActivityHistoryBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class HistoryActivity : AppCompatActivity(){
+
+    private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+            R.id.homepage -> {
+                val intent = Intent(this@HistoryActivity, SigninActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.history -> {
+                val intent = Intent(this@HistoryActivity, SignUpActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+
+    }
 
     private var listAdapter = HistoryAdapter(ArrayList<HistoryStats>())
 
@@ -21,6 +48,15 @@ class HistoryActivity : AppCompatActivity(){
         var binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation7)
+        bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, SigninActivity::class.java)
+            startActivity(i)
+        }
 
         binding.historyRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.historyRecyclerView.adapter = listAdapter

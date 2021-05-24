@@ -6,13 +6,17 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.smidig.History.InfoActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
 GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
@@ -35,8 +39,38 @@ GoogleMap.OnMarkerClickListener {
         supportActionBar?.hide()
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
-    }
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation3)
+        bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, InfoActivity::class.java)
+            startActivity(i)
+        }
+    }
+    private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+            R.id.homepage -> {
+                val intent = Intent(this@RouteActivity, SigninActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.history -> {
+                val intent = Intent(this@RouteActivity, SignUpActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+
+    }
+    
     override fun onMapReady(googleMap: GoogleMap?) {
         map = googleMap ?: return
         map.setMinZoomPreference(13f)
