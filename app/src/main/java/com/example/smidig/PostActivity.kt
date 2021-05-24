@@ -29,7 +29,7 @@ class PostActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@PostActivity, SignUpActivity::class.java)
+                val intent = Intent(this@PostActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

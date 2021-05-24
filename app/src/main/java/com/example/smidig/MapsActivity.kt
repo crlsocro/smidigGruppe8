@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
+import com.example.smidig.History.HistoryActivity
 import com.example.smidig.PermissionUtils.PermissionDeniedDialog.newInstance
 import com.example.smidig.PermissionUtils.isPermissionGranted
 import com.example.smidig.PermissionUtils.requestPermission
@@ -34,7 +35,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@MapsActivity, SignUpActivity::class.java)
+                val intent = Intent(this@MapsActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

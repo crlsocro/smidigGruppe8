@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
 import com.example.smidig.History.HistoryActivity
+import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
 import com.example.smidig.database.Quiz
 import com.example.smidig.database.QuizDao
@@ -30,7 +31,7 @@ class QuizActivity: AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@QuizActivity, SignUpActivity::class.java)
+                val intent = Intent(this@QuizActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
@@ -87,6 +88,7 @@ class QuizActivity: AppCompatActivity() {
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
 
+            var markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
             var quizDAO : QuizDao = MultiDatabase.get(this).getQDao()
 
             var quizTest : Quiz = Quiz(0, "Test", "test","test")
@@ -96,11 +98,29 @@ class QuizActivity: AppCompatActivity() {
             println("test = " + test)
             println("test.size")
 
-            val i = Intent(this, RouteActivity::class.java)
-            var clickedPin = intent.getStringExtra("markerValue")
-            i.putExtra("markerValue", clickedPin)
-            startActivity(i)
-            println(clickedPin)
+            var check = 0
+
+            for (i in 1..5) {
+                if(markerDao.getMarker(i).clicked) {
+                   check += 1
+                } else {
+                    println(":(")
+                }
+
+                if(check == 5) {
+                    for (i in 1..5) {
+                        markerDao.setClicked(i, 0)
+                    }
+                    val i = Intent(this, SummaryActivity::class.java)
+                    startActivity(i)
+                } else {
+                    println(check)
+                    println("check")
+                    val i = Intent(this, RouteActivity::class.java)
+                    startActivity(i)
+                }
+            }
+
         }
     }
     fun onRadioButtonClicked(view: View) {
