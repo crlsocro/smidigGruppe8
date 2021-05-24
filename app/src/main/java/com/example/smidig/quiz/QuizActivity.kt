@@ -51,6 +51,7 @@ class QuizActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizpage)
         supportActionBar?.hide()
+        currentQList = Constants.getQuestions()
         setQuestion()
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation5)
