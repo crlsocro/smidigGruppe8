@@ -7,16 +7,53 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.R
 import com.example.smidig.RouteActivity
+import com.example.smidig.SignUpActivity
+import com.example.smidig.SigninActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class InfoActivity: AppCompatActivity() {
+
+    private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.home -> {
+                return@OnNavigationItemSelectedListener false
+            }
+            R.id.homepage -> {
+                val intent = Intent(this@InfoActivity, SigninActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.history -> {
+                val intent = Intent(this@InfoActivity, SignUpActivity::class.java)
+                startActivity(intent)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.profile -> {
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
         supportActionBar?.hide()
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation2)
+        bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, HistoryActivity::class.java)
+            startActivity(i)
+        }
 
         var webView = findViewById<WebView>(R.id.pinMap)
         webView.setInitialScale(1)
