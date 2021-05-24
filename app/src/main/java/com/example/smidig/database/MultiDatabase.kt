@@ -6,10 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [Quiz::class, Marker::class], version = 4)
+@Database(entities = [Quiz::class, Marker::class, Login::class], version = 4)
 abstract class MultiDatabase: RoomDatabase() {
     abstract fun getQDao(): QuizDao
     abstract  fun getMDao(): MarkerDao
+    abstract fun getLDao(): LoginDao
 
     companion object{
         var DB_FILENAME = "DB"
