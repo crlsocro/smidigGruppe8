@@ -3,10 +3,7 @@ package com.example.smidig.quiz
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RadioButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
 import com.example.smidig.History.HistoryActivity
@@ -57,14 +54,15 @@ class QuizActivity: AppCompatActivity() {
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation5)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
-
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, PostActivity::class.java)
             startActivity(i)
         }
 
+
     }
+
     private fun setQuestion() {
         mCurrentP = 1
         val question = currentQList!![mCurrentP - 1]
@@ -73,6 +71,12 @@ class QuizActivity: AppCompatActivity() {
         val optionTwo = findViewById<TextView>(R.id.option_two)
         val optionThree = findViewById<TextView>(R.id.option_three)
         val optionFour = findViewById<TextView>(R.id.option_four)
+
+        //var radioButton = findViewById<RadioGroup>(R.id.radioGroup)
+       var radioButton1 = findViewById<RadioButton>(R.id.option_one)
+       var radioButton2 = findViewById<RadioButton>(R.id.option_two)
+       var radioButton3 = findViewById<RadioButton>(R.id.option_three)
+       var radioButton4 = findViewById<RadioButton>(R.id.option_four)
 
         questionView.text = question!!.question
         optionOne.text = question?.optionOne
