@@ -9,6 +9,7 @@ import android.widget.EditText
 import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.*
 import com.example.smidig.quiz.QuizActivity
+import org.jetbrains.anko.toast
 
 class SigninActivity : AppCompatActivity() {
 
@@ -25,24 +26,26 @@ class SigninActivity : AppCompatActivity() {
         emailEditText.setText("testUser1")
         passwordEditText.setText("testUser1")
 
-        var btnSignin = findViewById<Button>(R.id.SigninBtn)
-        btnSignin.setOnClickListener {
 
-            val i = Intent(this, MapsActivity::class.java)
-
-            username = emailEditText.text.toString()
-            password = passwordEditText.text.toString()
-
-            startActivity(i)
-        }
 
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
         var quizTest : Login = Login(0, "testUser1", "testUser1")
         loginDAO.addLogin(quizTest)
 
-        var test : Login = loginDAO.getUser(username)
-        println("test = " + test)
-        println("test.size")
+        var userInput : Login = loginDAO.getUser(username)
+
+
+        var btnSignin = findViewById<Button>(R.id.SigninBtn)
+        btnSignin.setOnClickListener {
+
+            val i = Intent(this, MapsActivity::class.java)
+
+            //if(userInput.password === passwordEditText.text.toString()){
+                startActivity(i)
+            //}else{
+            //   toast("Access Denied!")
+            //}
+        }
     }
 
     fun toRegister(view: View) {
