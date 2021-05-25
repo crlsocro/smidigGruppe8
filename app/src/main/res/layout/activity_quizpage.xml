@@ -124,7 +124,7 @@
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_marginTop="560dp"
+            android:layout_marginTop="550dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/question">
@@ -134,7 +134,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_marginTop="100dp"
             android:background="@drawable/options"
             android:gravity="center"
             android:onClick="onRadioButtonClicked"
