@@ -32,7 +32,7 @@ class SigninActivity : AppCompatActivity() {
             username = emailEditText.text.toString()
             password = passwordEditText.text.toString()
 
-            val i = Intent(this, HistoryActivity::class.java)
+
             startActivity(i)
         }
 
