@@ -39,7 +39,7 @@ class SigninActivity : AppCompatActivity() {
         btnSignin.setOnClickListener {
 
             username = emailEditText.text.toString()
-            var userInput : Login = loginDAO.getUserID(1)
+            var userInput : Login = loginDAO.getUser("testUser1")
             val i = Intent(this, MapsActivity::class.java)
 
             if(userInput.password == passwordEditText.text.toString()){
