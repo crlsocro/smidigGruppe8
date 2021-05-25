@@ -60,6 +60,8 @@ class QuizActivity: AppCompatActivity() {
             startActivity(i)
         }
 
+
+        //TODO: Fikse dette til quiz
         val clickedPin = intent.getStringExtra("value")
         if(clickedPin == "1") {
             println("Dette er quiz 1")
