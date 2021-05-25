@@ -70,7 +70,7 @@ GoogleMap.OnMarkerClickListener {
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@RouteActivity, SigninActivity::class.java)
+                val intent = Intent(this@RouteActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

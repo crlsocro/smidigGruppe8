@@ -24,7 +24,7 @@ class PostActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@PostActivity, SigninActivity::class.java)
+                val intent = Intent(this@PostActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
