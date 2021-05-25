@@ -48,8 +48,8 @@ class PostActivity : AppCompatActivity() {
         var completeBtn = findViewById<Button>(R.id.completeBtn)
         completeBtn.setOnClickListener {
             val i = Intent(this, QuizActivity::class.java)
-            var clickedPin = intent.getStringExtra("markerValue")
-            i.putExtra("markerValue", clickedPin)
+            var clickedPin = intent.getStringExtra("value")
+            i.putExtra("value", clickedPin)
             startActivity(i)
         }
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
@@ -57,9 +57,7 @@ class PostActivity : AppCompatActivity() {
 
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
-            var clickedPin = intent?.getStringExtra("value")
             val i = Intent(this, RouteActivity::class.java)
-            i.putExtra("value", clickedPin.toString())
             startActivity(i)
         }
 

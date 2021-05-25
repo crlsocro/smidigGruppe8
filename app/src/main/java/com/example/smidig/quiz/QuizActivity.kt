@@ -60,6 +60,19 @@ class QuizActivity: AppCompatActivity() {
             startActivity(i)
         }
 
+        val clickedPin = intent.getStringExtra("value")
+        if(clickedPin == "1") {
+            println("Dette er quiz 1")
+        } else if(clickedPin == "2") {
+            println("Dette er quiz 2")
+        } else if(clickedPin == "3") {
+            println("Dette er quiz 3")
+        } else if(clickedPin == "4") {
+            println("Dette er quiz 4")
+        } else if(clickedPin == "5") {
+            println("Dette er quiz 5")
+        }
+
 
     }
 
