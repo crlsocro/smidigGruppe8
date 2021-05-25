@@ -31,6 +31,8 @@ class InfoActivity: AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
+                val intent = Intent(this@InfoActivity, ProfileActivity::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }
