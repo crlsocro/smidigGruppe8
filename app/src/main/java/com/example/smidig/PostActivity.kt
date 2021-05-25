@@ -57,16 +57,26 @@ class PostActivity : AppCompatActivity() {
 
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
+            var clickedPin = intent?.getStringExtra("value")
             val i = Intent(this, RouteActivity::class.java)
+            i.putExtra("value", clickedPin.toString())
             startActivity(i)
         }
 
-        var clickedPin = intent?.getStringExtra("markerValue")
+        //TODO: rydde i dette rotet, lagt til for å adde forskjellig post text
+
+        var clickedPin = intent?.getStringExtra("value")
 
         if(clickedPin == "1") {
             println("dette er post 1")
         } else if (clickedPin == "2") {
             println("dette er påsssst 2")
+        } else if (clickedPin == "3") {
+            println("dette er påsssst 3")
+        } else if (clickedPin == "4") {
+            println("dette er påsssst 4")
+        } else if (clickedPin == "5") {
+            println("dette er påsssst 5")
         }
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
