@@ -27,12 +27,12 @@ class SigninActivity : AppCompatActivity() {
 
         var btnSignin = findViewById<Button>(R.id.SigninBtn)
         btnSignin.setOnClickListener {
+
             val i = Intent(this, MapsActivity::class.java)
 
             username = emailEditText.text.toString()
             password = passwordEditText.text.toString()
 
-            val i = Intent(this, HistoryActivity::class.java)
             startActivity(i)
         }
 
