@@ -18,7 +18,7 @@ class SummaryActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@SummaryActivity, SigninActivity::class.java)
+                val intent = Intent(this@SummaryActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

@@ -20,7 +20,7 @@ class MarkerActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@MarkerActivity, SigninActivity::class.java)
+                val intent = Intent(this@MarkerActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

@@ -9,6 +9,7 @@ import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.smidig.MapsActivity
 import com.example.smidig.R
 import com.example.smidig.SignUpActivity
 import com.example.smidig.SigninActivity
@@ -24,7 +25,7 @@ class HistoryActivity : AppCompatActivity(){
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@HistoryActivity, SigninActivity::class.java)
+                val intent = Intent(this@HistoryActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

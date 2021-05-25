@@ -9,10 +9,7 @@ import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smidig.R
-import com.example.smidig.RouteActivity
-import com.example.smidig.SignUpActivity
-import com.example.smidig.SigninActivity
+import com.example.smidig.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -24,7 +21,7 @@ class InfoActivity: AppCompatActivity() {
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@InfoActivity, SigninActivity::class.java)
+                val intent = Intent(this@InfoActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
