@@ -32,19 +32,25 @@ class SigninActivity : AppCompatActivity() {
         var quizTest : Login = Login(0, "testUser1", "testUser1")
         loginDAO.addLogin(quizTest)
 
-        var userInput : Login = loginDAO.getUser(username)
+
 
 
         var btnSignin = findViewById<Button>(R.id.SigninBtn)
         btnSignin.setOnClickListener {
 
+            username = emailEditText.text.toString()
+            var userInput : Login = loginDAO.getUserID(1)
             val i = Intent(this, MapsActivity::class.java)
 
-            //if(userInput.password === passwordEditText.text.toString()){
+            if(userInput.password == passwordEditText.text.toString()){
+                println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+                println(userInput)
                 startActivity(i)
-            //}else{
-            //   toast("Access Denied!")
-            //}
+            }else{
+                println("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+                println(userInput)
+               toast("Access Denied!")
+            }
         }
     }
 
