@@ -9,7 +9,7 @@ import android.widget.EditText
 import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.*
 import com.example.smidig.quiz.QuizActivity
-import org.jetbrains.anko.toast
+
 
 //TODO crashing when trying to a user that doesnt exist
 
