@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.*
 import com.example.smidig.History.HistoryActivity
+import com.example.smidig.History.Info
+import com.example.smidig.quiz.Questions
 import com.example.smidig.quiz.QuizActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
@@ -42,6 +44,9 @@ class PostActivity : AppCompatActivity() {
         false
 
     }
+    private var mCurrentP: Int = 1
+    private var currentIList: ArrayList<Info>? = null
+    private var selectedOption: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,19 +70,7 @@ class PostActivity : AppCompatActivity() {
 
         //TODO: rydde i dette rotet, lagt til for å adde forskjellig post text
 
-        var clickedPin = intent?.getStringExtra("value")
 
-        if(clickedPin == "1") {
-            println("dette er post 1")
-        } else if (clickedPin == "2") {
-            println("dette er påsssst 2")
-        } else if (clickedPin == "3") {
-            println("dette er påsssst 3")
-        } else if (clickedPin == "4") {
-            println("dette er påsssst 4")
-        } else if (clickedPin == "5") {
-            println("dette er påsssst 5")
-        }
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
 
@@ -122,6 +115,26 @@ class PostActivity : AppCompatActivity() {
         mediaPlayer.setOnCompletionListener {
             play.setImageResource(R.drawable.ic_action_play)
             seekBar.progress = 0
+        }
+    }
+    private fun setInfo(){
+        mCurrentP = 1
+        val info = currentIList!![mCurrentP - 1]
+        val infoText = findViewById<TextView>(R.id.postParapraghText)
+
+        var clickedPin = intent?.getStringExtra("value")
+        if(clickedPin == "1") {
+            mCurrentP = 1
+            val info = currentIList!![mCurrentP - 1]
+            infoText.text = info!!.info
+        } else if (clickedPin == "2") {
+            infoText.text = "dette er påsssst 2"
+        } else if (clickedPin == "3") {
+            infoText.text = "dette er påsssst 3"
+        } else if (clickedPin == "4") {
+            infoText.text = "dette er påsssst 4"
+        } else if (clickedPin == "5") {
+            infoText.text = "dette er påsssst 5"
         }
     }
 

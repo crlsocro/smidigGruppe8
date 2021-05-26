@@ -142,18 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="130dp"
             android:layout_marginTop="20dp"
-            android:text=" Nonneseter kloster ble sannsynligvis grunnlagt i ca.
-1150 og er omtalt av Snorre. Klosteret tilhørte
-benediktinerordens kvinnelige gren. Klosteret var viet
-til den hellige Maria. Klosteret var en stor jordeier og
-eide helt eller delvis 272 gårder i Østlandsområdet.
-Klosteret lå nær Hovinbekken og lå utenfor
-middelalderbyen. Et hjørne av det man mener kan ha
-vært klosterkirken ble funnet da Schweigaards gate ble
-utbedret i 1879. To år tidligere kan store deler av kirken
-ha blitt fjernet da man bygde Schweigaards gate 50.
-Det skal finnes rester under Schweigaards gate 55 og
-Grønlandsleiret 73
+            android:text=" Testing
 "
             android:textColor="@color/white"
             android:textSize="14sp"
