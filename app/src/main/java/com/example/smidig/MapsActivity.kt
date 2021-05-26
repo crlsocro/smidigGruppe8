@@ -13,6 +13,8 @@ import com.example.smidig.History.HistoryActivity
 import com.example.smidig.PermissionUtils.PermissionDeniedDialog.newInstance
 import com.example.smidig.PermissionUtils.isPermissionGranted
 import com.example.smidig.PermissionUtils.requestPermission
+import com.example.smidig.database.MarkerDao
+import com.example.smidig.database.MultiDatabase
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -85,6 +87,30 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                 this, R.raw.style_json
             )
         )
+
+        val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
+        if(markerDao.checkEmpty() == 0) {
+            var markerTest : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.910, 10.720,false, "fsafs")
+            var markerTest2 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.920, 10.730,false, "fsafs")
+            var markerTest3 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.930, 10.750,false, "fsafs")
+            var markerTest4 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.920, 10.740,false, "fsafs")
+            var markerTest5 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.910, 10.730,false, "fsafs")
+            markerDao.addMarker(markerTest)
+            markerDao.addMarker(markerTest2)
+            markerDao.addMarker(markerTest3)
+            markerDao.addMarker(markerTest4)
+            markerDao.addMarker(markerTest5)
+            var historyMarker : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.910, 10.720,false, "fsafs")
+            var historyMarker2 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.920, 10.730,false, "fsafs")
+            var historyMarker3 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.930, 10.750,false, "fsafs")
+            var historyMarker4 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.920, 10.740,false, "fsafs")
+            var historyMarker5 : com.example.smidig.database.Marker = com.example.smidig.database.Marker(0, 59.910, 10.730,false, "fsafs")
+            markerDao.addMarker(historyMarker)
+            markerDao.addMarker(historyMarker2)
+            markerDao.addMarker(historyMarker3)
+            markerDao.addMarker(historyMarker4)
+            markerDao.addMarker(historyMarker5)
+        }
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {

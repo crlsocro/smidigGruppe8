@@ -67,7 +67,7 @@ class InfoActivity: AppCompatActivity() {
 
         var completeBtn = findViewById<Button>(R.id.completeBtn)
         completeBtn.setOnClickListener{
-            val i = Intent(this, RouteActivity::class.java)
+            val i = Intent(this, HistoryRouteActivity::class.java)
             startActivity(i)
         }
     }
