@@ -67,16 +67,39 @@ class PostActivity : AppCompatActivity() {
 
         var clickedPin = intent?.getStringExtra("value")
 
-        if(clickedPin == "1") {
-            println("dette er post 1")
-        } else if (clickedPin == "2") {
-            println("dette er påsssst 2")
-        } else if (clickedPin == "3") {
-            println("dette er påsssst 3")
-        } else if (clickedPin == "4") {
-            println("dette er påsssst 4")
-        } else if (clickedPin == "5") {
-            println("dette er påsssst 5")
+        when (clickedPin) {
+            "1" -> {
+                println("dette er post 1")
+            }
+            "2" -> {
+                println("dette er påsssst 2")
+            }
+            "3" -> {
+                println("dette er påsssst 3")
+            }
+            "4" -> {
+                println("dette er påsssst 4")
+            }
+            "5" -> {
+                println("dette er påsssst 5")
+            }
+            "6" -> {
+                println("Dette er pååst 66666")
+            }
+            "7" -> {
+                println("Dette er pååst 77")
+            }
+            "8" -> {
+                println("Dette er pååst 8888")
+            }
+            "9" -> {
+                println("Dette er pååst 9999")
+            }
+            "10" -> {
+                println("Dette er pååst 100000000")
+            }
+
+            //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
         }
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode

@@ -155,6 +155,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
                 if(markerDao.getMarker(i - 1).clicked || markerDao.getMarker(i).markerID == 6){
                     markerDao.setClicked(i, 1)
                     val intent = Intent(this, PostActivity::class.java)
+                    intent.putExtra("value", i.toString())
                     startActivity(intent)
                 }
 

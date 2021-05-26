@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
 import com.example.smidig.History.HistoryActivity
+import com.example.smidig.History.HistoryRouteActivity
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
 import com.example.smidig.database.Quiz
@@ -158,11 +159,22 @@ class QuizActivity: AppCompatActivity() {
                     }
                     val i = Intent(this, SummaryActivity::class.java)
                     startActivity(i)
-                } else {
-                    println(check)
-                    println("check")
-                    val i = Intent(this, RouteActivity::class.java)
+                } else if(clickedPin?.toInt() == 10) {
+                    for (i in 6..10) {
+                        markerDao.setClicked(i, 0)
+                    }
+                    val i = Intent(this, SummaryActivity::class.java)
                     startActivity(i)
+                } else {
+                    if(clickedPin?.toInt()!! <= 5) {
+                        println(check)
+                        println("check")
+                        val i = Intent(this, RouteActivity::class.java)
+                        startActivity(i)
+                    } else {
+                        val i = Intent(this, HistoryRouteActivity::class.java)
+                        startActivity(i)
+                    }
                 }
             }
 
