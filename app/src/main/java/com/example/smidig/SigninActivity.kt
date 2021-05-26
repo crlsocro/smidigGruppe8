@@ -9,7 +9,9 @@ import android.widget.EditText
 import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.*
 import com.example.smidig.quiz.QuizActivity
-import org.jetbrains.anko.toast
+
+
+//TODO crashing when trying to a user that doesnt exist
 
 class SigninActivity : AppCompatActivity() {
 
@@ -23,33 +25,39 @@ class SigninActivity : AppCompatActivity() {
         var emailEditText = findViewById<EditText>(R.id.emailEditText)
         var passwordEditText = findViewById<EditText>(R.id.passwordEditText)
 
-        emailEditText.setText("testUser1")
-        passwordEditText.setText("testUser1")
+        emailEditText.setText("keenHistorian")
+        passwordEditText.setText("Historian")
 
 
 
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
-        var quizTest : Login = Login(0, "testUser1", "testUser1")
-        loginDAO.addLogin(quizTest)
+        var user : Login = Login(0, "", "")
 
-
+//TODO this try/catch is useless
+        try {
+            user = Login(0, "keenHistorian", "Historian")
+            loginDAO.addLogin(user)
+        }catch (e : NullPointerException){
+            println(e)
+        }
 
 
         var btnSignin = findViewById<Button>(R.id.SigninBtn)
         btnSignin.setOnClickListener {
 
             username = emailEditText.text.toString()
-            var userInput : Login = loginDAO.getUser("testUser1")
+            password = passwordEditText.text.toString()
+
+            var userInput : Login = loginDAO.getUser(username)
+
             val i = Intent(this, MapsActivity::class.java)
 
-            if(userInput.password == passwordEditText.text.toString()){
-                println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-                println(userInput)
-                startActivity(i)
-            }else{
-                println("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
-                println(userInput)
-               toast("Access Denied!")
+            try {
+                if(userInput.password.equals(password)){
+                    startActivity(i)
+                }
+            }catch (e: java.lang.NullPointerException){
+
             }
         }
     }

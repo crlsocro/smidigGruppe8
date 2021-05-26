@@ -80,6 +80,8 @@ GoogleMap.OnMarkerClickListener {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
+                val intent = Intent(this@RouteActivity, ProfileActivity::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }

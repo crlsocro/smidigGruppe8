@@ -27,7 +27,7 @@
             android:value="AIzaSyBjL_V5WvSQ3XTrsg1FB125DnTkX7Zz6sk" />
 
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".FrontPageActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".MarkerActivity" />
         <activity android:name=".quiz.QuizActivity" />
         <activity android:name=".History.HistoryActivity" />

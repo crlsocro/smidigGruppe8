@@ -9,10 +9,7 @@ import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.smidig.MapsActivity
-import com.example.smidig.R
-import com.example.smidig.SignUpActivity
-import com.example.smidig.SigninActivity
+import com.example.smidig.*
 import com.example.smidig.databinding.ActivityHistoryBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -35,6 +32,8 @@ class HistoryActivity : AppCompatActivity(){
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
+                val intent = Intent(this@HistoryActivity, ProfileActivity::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }
