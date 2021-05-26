@@ -89,35 +89,45 @@ class QuizActivity: AppCompatActivity() {
 
         val clickedPin = intent.getStringExtra("value")
         if(clickedPin == "1") {
+            mCurrentP = 1
+            val question = currentQList!![mCurrentP - 1]
             questionView.text = question!!.question
             optionOne.text = question?.optionOne
             optionTwo.text = question?.optionTwo
             optionThree.text = question?.optionThree
             optionFour.text = question?.optionFour
         } else if(clickedPin == "2") {
-            questionView.text = question!!.question
-            optionOne.text = question?.optionOne
-            optionTwo.text = question?.optionTwo
-            optionThree.text = question?.optionThree
-            optionFour.text = question?.optionFour
+            mCurrentP = 2
+            val question2 = currentQList!![mCurrentP - 1]
+            questionView.text = question2!!.question
+            optionOne.text = question2?.optionOne
+            optionTwo.text = question2?.optionTwo
+            optionThree.text = question2?.optionThree
+            optionFour.text = question2?.optionFour
         } else if(clickedPin == "3") {
-            questionView.text = question!!.question
-            optionOne.text = question?.optionOne
-            optionTwo.text = question?.optionTwo
-            optionThree.text = question?.optionThree
-            optionFour.text = question?.optionFour
+            mCurrentP = 3
+            val question3 = currentQList!![mCurrentP - 1]
+            questionView.text = question3!!.question
+            optionOne.text = question3?.optionOne
+            optionTwo.text = question3?.optionTwo
+            optionThree.text = question3?.optionThree
+            optionFour.text = question3?.optionFour
         } else if(clickedPin == "4") {
-            questionView.text = question!!.question
-            optionOne.text = question?.optionOne
-            optionTwo.text = question?.optionTwo
-            optionThree.text = question?.optionThree
-            optionFour.text = question?.optionFour
+            mCurrentP = 4
+            val question4 = currentQList!![mCurrentP - 1]
+            questionView.text = question4!!.question
+            optionOne.text = question4?.optionOne
+            optionTwo.text = question4?.optionTwo
+            optionThree.text = question4?.optionThree
+            optionFour.text = question4?.optionFour
         } else if(clickedPin == "5") {
-            questionView.text = question!!.question
-            optionOne.text = question?.optionOne
-            optionTwo.text = question?.optionTwo
-            optionThree.text = question?.optionThree
-            optionFour.text = question?.optionFour
+            mCurrentP = 5
+            val question5 = currentQList!![mCurrentP - 1]
+            questionView.text = question5!!.question
+            optionOne.text = question5?.optionOne
+            optionTwo.text = question5?.optionTwo
+            optionThree.text = question5?.optionThree
+            optionFour.text = question5?.optionFour
         }
 
         var submitBtn = findViewById<Button>(R.id.submitBtn)
