@@ -57,7 +57,7 @@ class SigninActivity : AppCompatActivity() {
                     startActivity(i)
                 }
             }catch (e: java.lang.NullPointerException){
-                toast("Access Denied!")
+
             }
         }
     }
