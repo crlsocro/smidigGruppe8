@@ -128,7 +128,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
                         mrkrArray[0].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                         addMarker(mrkrArray[i - 6])
                     } else {
-                        if(checkNext() || (!markerDao.getMarker(10).clicked) && i == 10) {
+                        if(checkNext() || (markerDao.getMarker(9).clicked) && !markerDao.getMarker(10).clicked) {
                             mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                             addMarker(mrkrArray[i - 6])
                         } else {
