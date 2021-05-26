@@ -62,18 +62,6 @@ class QuizActivity: AppCompatActivity() {
 
 
         //TODO: Fikse dette til quiz
-        val clickedPin = intent.getStringExtra("value")
-        if(clickedPin == "1") {
-            println("Dette er quiz 1")
-        } else if(clickedPin == "2") {
-            println("Dette er quiz 2")
-        } else if(clickedPin == "3") {
-            println("Dette er quiz 3")
-        } else if(clickedPin == "4") {
-            println("Dette er quiz 4")
-        } else if(clickedPin == "5") {
-            println("Dette er quiz 5")
-        }
 
 
     }
@@ -93,16 +81,44 @@ class QuizActivity: AppCompatActivity() {
        var radioButton3 = findViewById<RadioButton>(R.id.option_three)
        var radioButton4 = findViewById<RadioButton>(R.id.option_four)
 
-        questionView.text = question!!.question
-        optionOne.text = question?.optionOne
-        optionTwo.text = question?.optionTwo
-        optionThree.text = question?.optionThree
-        optionFour.text = question?.optionFour
-
         /*optionOne.setOnClickListener(this)
         optionTwo.setOnClickListener(this)
         optionThree.setOnClickListener(this)
         optionFour.setOnClickListener(this)*/
+
+
+        val clickedPin = intent.getStringExtra("value")
+        if(clickedPin == "1") {
+            questionView.text = question!!.question
+            optionOne.text = question?.optionOne
+            optionTwo.text = question?.optionTwo
+            optionThree.text = question?.optionThree
+            optionFour.text = question?.optionFour
+        } else if(clickedPin == "2") {
+            questionView.text = question!!.question
+            optionOne.text = question?.optionOne
+            optionTwo.text = question?.optionTwo
+            optionThree.text = question?.optionThree
+            optionFour.text = question?.optionFour
+        } else if(clickedPin == "3") {
+            questionView.text = question!!.question
+            optionOne.text = question?.optionOne
+            optionTwo.text = question?.optionTwo
+            optionThree.text = question?.optionThree
+            optionFour.text = question?.optionFour
+        } else if(clickedPin == "4") {
+            questionView.text = question!!.question
+            optionOne.text = question?.optionOne
+            optionTwo.text = question?.optionTwo
+            optionThree.text = question?.optionThree
+            optionFour.text = question?.optionFour
+        } else if(clickedPin == "5") {
+            questionView.text = question!!.question
+            optionOne.text = question?.optionOne
+            optionTwo.text = question?.optionTwo
+            optionThree.text = question?.optionThree
+            optionFour.text = question?.optionFour
+        }
 
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
