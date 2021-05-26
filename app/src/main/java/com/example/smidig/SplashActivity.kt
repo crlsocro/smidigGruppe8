@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler().postDelayed({
-            val intent = Intent(this@SplashActivity, SigninActivity::class.java)
+            val intent = Intent(this@SplashActivity, MapsActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)
