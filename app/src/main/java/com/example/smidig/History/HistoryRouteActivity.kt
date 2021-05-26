@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.History
 
 import android.Manifest
 import android.content.Intent
@@ -10,42 +10,44 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.smidig.History.HistoryActivity
+import com.example.smidig.MapsActivity
+import com.example.smidig.PermissionUtils
+import com.example.smidig.PostActivity
+import com.example.smidig.R
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
-import com.example.smidig.History.InfoActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class RouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
-GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
-    ActivityCompat.OnRequestPermissionsResultCallback,
-GoogleMap.OnMarkerClickListener {
+class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
+        GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
+        ActivityCompat.OnRequestPermissionsResultCallback,
+        GoogleMap.OnMarkerClickListener {
 
     private var permissionDenied = false
     private lateinit var map: GoogleMap
     var mrkr = MarkerOptions()
             .position(LatLng(59.910, 10.720))
-            .title("1")
+            .title("6")
 
     var mrkr2 = MarkerOptions()
             .position(LatLng(59.920, 10.730))
-            .title("2")
+            .title("7")
 
     var mrkr3 = MarkerOptions()
             .position(LatLng(59.930, 10.750))
-            .title("3")
+            .title("8")
 
     var mrkr4 = MarkerOptions()
             .position(LatLng(59.920, 10.740))
-            .title("4")
+            .title("9")
 
     var mrkr5 = MarkerOptions()
             .position(LatLng(59.910, 10.730))
-            .title("5")
+            .title("10")
 
     val mrkrArray = arrayOf(mrkr, mrkr2, mrkr3, mrkr4, mrkr5)
 
@@ -64,34 +66,33 @@ GoogleMap.OnMarkerClickListener {
             startActivity(i)
         }
     }
+
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.home -> {
                 return@OnNavigationItemSelectedListener false
             }
             R.id.homepage -> {
-                val intent = Intent(this@RouteActivity, MapsActivity::class.java)
+                val intent = Intent(this@HistoryRouteActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@RouteActivity, HistoryActivity::class.java)
+                val intent = Intent(this@HistoryRouteActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@RouteActivity, ProfileActivity::class.java)
-                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
 
     }
-    
+
     override fun onMapReady(googleMap: GoogleMap?) {
 
-        val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
+        val markerDao: MarkerDao = MultiDatabase.get(this).getMDao()
 
         map = googleMap ?: return
         map.setMinZoomPreference(13f)
@@ -108,16 +109,16 @@ GoogleMap.OnMarkerClickListener {
         println(intent?.getStringExtra("markerValue"))
 
         map.apply {
-                for (i in 1..5) {
-                    var clicked = markerDao.getMarker(i).clicked
-                    if (clicked) {
-                        mrkrArray[i-1].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-                        addMarker(mrkrArray[i-1])
-                    } else {
-                        addMarker(mrkrArray[i-1])
-                    }
-
+            for (i in 6..10) {
+                var clicked = markerDao.getMarker(i).clicked
+                if (clicked) {
+                    mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                    addMarker(mrkrArray[i - 6])
+                } else {
+                    addMarker(mrkrArray[i - 6])
                 }
+
+            }
         }
 
         map.setMapStyle(
@@ -128,15 +129,16 @@ GoogleMap.OnMarkerClickListener {
     }
 
     override fun onMarkerClick(marker: Marker?): Boolean {
-        val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
-        for(i in 1..5) {
-            if(marker?.title == mrkrArray[i-1].title) {
-                markerDao.setClicked(i, 1)
-                val intent = Intent(this, PostActivity::class.java)
-                intent.putExtra("value", i.toString())
-                startActivity(intent)
-            }
-            else {
+        val markerDao: MarkerDao = MultiDatabase.get(this).getMDao()
+        for (i in 6..10) {
+            if (marker?.title == mrkrArray[i - 6].title) {
+                if(markerDao.getMarker(i - 1).clicked || markerDao.getMarker(i).markerID == 6){
+                    markerDao.setClicked(i, 1)
+                    val intent = Intent(this, PostActivity::class.java)
+                    startActivity(intent)
+                }
+
+            } else {
 
             }
         }
@@ -150,14 +152,14 @@ GoogleMap.OnMarkerClickListener {
     private fun enableMyLocation() {
         if (!::map.isInitialized) return
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-            == PackageManager.PERMISSION_GRANTED
+                == PackageManager.PERMISSION_GRANTED
         ) {
             map.isMyLocationEnabled = true
         } else {
             // Permission to access the location is missing. Show rationale and request permission
             PermissionUtils.requestPermission(
-                this, LOCATION_PERMISSION_REQUEST_CODE,
-                Manifest.permission.ACCESS_FINE_LOCATION, true
+                    this, LOCATION_PERMISSION_REQUEST_CODE,
+                    Manifest.permission.ACCESS_FINE_LOCATION, true
             )
         }
     }
@@ -174,19 +176,19 @@ GoogleMap.OnMarkerClickListener {
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
+            requestCode: Int,
+            permissions: Array<String>,
+            grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
             return
         }
         if (PermissionUtils.isPermissionGranted(
-                permissions,
-                grantResults,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            )
+                        permissions,
+                        grantResults,
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                )
         ) {
             // Enable the my location layer if the permission has been granted.
             enableMyLocation()
@@ -211,7 +213,7 @@ GoogleMap.OnMarkerClickListener {
      */
     private fun showMissingPermissionError() {
         PermissionUtils.PermissionDeniedDialog.newInstance(true)
-            .show(supportFragmentManager, "dialog")
+                .show(supportFragmentManager, "dialog")
     }
 
     companion object {
