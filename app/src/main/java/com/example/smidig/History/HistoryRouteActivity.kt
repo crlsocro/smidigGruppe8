@@ -21,6 +21,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.lang.Error
 
 class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
@@ -111,11 +112,30 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
         map.apply {
             for (i in 6..10) {
                 var clicked = markerDao.getMarker(i).clicked
+                fun checkNext(): Boolean {
+                    return if (i != 10) {
+                        !markerDao.getMarker(i + 1).clicked && markerDao.getMarker(i - 1).clicked
+                    } else {
+                        false
+                    }
+                }
+
                 if (clicked) {
-                    mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-                    addMarker(mrkrArray[i - 6])
+                        mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+                        addMarker(mrkrArray[i - 6])
                 } else {
-                    addMarker(mrkrArray[i - 6])
+                    if(!markerDao.getMarker(6).clicked) {
+                        mrkrArray[0].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                        addMarker(mrkrArray[i - 6])
+                    } else {
+                        if(checkNext() || (!markerDao.getMarker(10).clicked) && i == 10) {
+                            mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                            addMarker(mrkrArray[i - 6])
+                        } else {
+                            mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                            addMarker(mrkrArray[i - 6])
+                        }
+                    }
                 }
 
             }
