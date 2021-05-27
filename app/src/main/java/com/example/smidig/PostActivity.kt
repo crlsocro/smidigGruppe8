@@ -41,7 +41,7 @@ class PostActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@PostActivity, ProfileActivity::class.java)
+                val intent = Intent(this@PostActivity,  SigninActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

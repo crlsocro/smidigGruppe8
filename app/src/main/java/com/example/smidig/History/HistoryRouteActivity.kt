@@ -10,10 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.smidig.MapsActivity
-import com.example.smidig.PermissionUtils
-import com.example.smidig.PostActivity
-import com.example.smidig.R
+import com.example.smidig.*
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
 import com.google.android.gms.maps.GoogleMap
@@ -84,6 +81,8 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
+                val intent = Intent(this@HistoryRouteActivity, SigninActivity::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }

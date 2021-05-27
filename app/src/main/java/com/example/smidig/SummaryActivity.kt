@@ -28,7 +28,7 @@ class SummaryActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@SummaryActivity, ProfileActivity::class.java)
+                val intent = Intent(this@SummaryActivity, SigninActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
