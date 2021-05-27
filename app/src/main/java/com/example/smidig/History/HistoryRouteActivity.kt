@@ -128,7 +128,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
                         mrkrArray[0].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                         addMarker(mrkrArray[i - 6])
                     } else {
-                        if(checkNext() || (!markerDao.getMarker(10).clicked) && i == 10) {
+                        if(checkNext() || (markerDao.getMarker(9).clicked) && !markerDao.getMarker(10).clicked) {
                             mrkrArray[i - 6].icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
                             addMarker(mrkrArray[i - 6])
                         } else {
@@ -155,6 +155,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
                 if(markerDao.getMarker(i - 1).clicked || markerDao.getMarker(i).markerID == 6){
                     markerDao.setClicked(i, 1)
                     val intent = Intent(this, PostActivity::class.java)
+                    intent.putExtra("value", i.toString())
                     startActivity(intent)
                 }
 
