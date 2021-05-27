@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/blue"
-        android:elevation="5dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -33,10 +33,22 @@
             android:id="@+id/backIcon"
             android:layout_width="60dp"
             android:layout_height="50dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/buttontwo" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/backIcon"
+            app:layout_constraintEnd_toEndOf="@+id/backIcon"
+            app:layout_constraintStart_toStartOf="@+id/backIcon"
+            app:layout_constraintTop_toTopOf="@+id/backIcon"
+            app:srcCompat="@drawable/backarrow" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -45,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/red"
-        android:elevation="5dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -167,9 +179,10 @@
 
     <ImageView
         android:id="@+id/infoIcon"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:elevation="5dp"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="5dp"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
