@@ -173,6 +173,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:menu="@menu/footer" />
+
     <!--
             https://www.youtube.com/watch?v=YsHHXg1vbcc&ab_channel=CodinginFlow
 
