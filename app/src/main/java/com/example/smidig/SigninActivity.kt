@@ -49,7 +49,7 @@ class SigninActivity : AppCompatActivity() {
 
             var userInput : Login = loginDAO.getUser(username)
 
-            val i = Intent(this, MapsActivity::class.java)
+            val i = Intent(this, ProfileActivity::class.java)
 
             try {
                 if(userInput.password.equals(password)){

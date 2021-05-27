@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/blue"
+        android:elevation="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,12 +31,12 @@
 
         <ImageView
             android:id="@+id/backIcon"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_left_24" />
+            app:srcCompat="@drawable/buttontwo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,8 +136,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttonLogin"
-        android:layout_width="216dp"
-        android:layout_height="65dp"
+        android:layout_width="212dp"
+        android:layout_height="64dp"
         android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
