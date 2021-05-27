@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.*
 import com.example.smidig.quiz.QuizActivity
@@ -40,7 +41,7 @@ class SigninActivity : AppCompatActivity() {
         }
 
 
-        var btnSignin = findViewById<Button>(R.id.SigninBtn)
+        var btnSignin = findViewById<ImageView>(R.id.buttonBG)
         btnSignin.setOnClickListener {
 
             username = emailEditText.text.toString()
@@ -58,14 +59,10 @@ class SigninActivity : AppCompatActivity() {
 
             }
         }
+
+
     }
 
-    fun toRegister(view: View) {
-        val intent = Intent(this, SignUpActivity::class.java).apply {
-
-        }
-        startActivity(intent)
-    }
 }
 //input username&password
 //check database for that user
