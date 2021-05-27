@@ -31,23 +31,23 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
     private var permissionDenied = false
     private lateinit var map: GoogleMap
     var mrkr = MarkerOptions()
-            .position(LatLng(59.910, 10.720))
+            .position(LatLng(59.909458, 10.768140))
             .title("6")
 
     var mrkr2 = MarkerOptions()
-            .position(LatLng(59.920, 10.730))
+            .position(LatLng(59.911830, 10.766780))
             .title("7")
 
     var mrkr3 = MarkerOptions()
-            .position(LatLng(59.930, 10.750))
+            .position(LatLng(59.913530, 10.757790))
             .title("8")
 
     var mrkr4 = MarkerOptions()
-            .position(LatLng(59.920, 10.740))
+            .position(LatLng(59.919950, 10.767640))
             .title("9")
 
     var mrkr5 = MarkerOptions()
-            .position(LatLng(59.910, 10.730))
+            .position(LatLng(59.914090, 10.766310))
             .title("10")
 
     val mrkrArray = arrayOf(mrkr, mrkr2, mrkr3, mrkr4, mrkr5)
@@ -96,10 +96,10 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
         val markerDao: MarkerDao = MultiDatabase.get(this).getMDao()
 
         map = googleMap ?: return
-        map.setMinZoomPreference(13f)
+        map.setMinZoomPreference(14f)
         map.setOnMarkerClickListener(this)
         val osloCoordinates = LatLngBounds(
-                LatLng(59.910, 10.720),
+                LatLng(59.911, 10.760),
                 LatLng(59.913, 10.769)
         )
         map.setLatLngBoundsForCameraTarget(osloCoordinates)
