@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.*
 import com.example.smidig.quiz.QuizActivity
 
-
-//TODO crashing when trying to a user that doesnt exist
+//TODO change so a user dont need to login. Only when visiting profile or doing a history
 
 class SigninActivity : AppCompatActivity() {
 
@@ -33,7 +33,6 @@ class SigninActivity : AppCompatActivity() {
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
         var user : Login = Login(0, "", "")
 
-//TODO this try/catch is useless
         try {
             user = Login(0, "keenHistorian", "Historian")
             loginDAO.addLogin(user)
@@ -42,7 +41,7 @@ class SigninActivity : AppCompatActivity() {
         }
 
 
-        var btnSignin = findViewById<Button>(R.id.SigninBtn)
+        var btnSignin = findViewById<ImageView>(R.id.buttonBG)
         btnSignin.setOnClickListener {
 
             username = emailEditText.text.toString()
@@ -60,14 +59,10 @@ class SigninActivity : AppCompatActivity() {
 
             }
         }
+
+
     }
 
-    fun toRegister(view: View) {
-        val intent = Intent(this, SignUpActivity::class.java).apply {
-
-        }
-        startActivity(intent)
-    }
 }
 //input username&password
 //check database for that user
