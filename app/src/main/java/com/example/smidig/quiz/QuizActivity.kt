@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
 import com.example.smidig.History.HistoryActivity
+import com.example.smidig.History.HistoryRouteActivity
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
 import com.example.smidig.database.Quiz
@@ -62,18 +63,6 @@ class QuizActivity: AppCompatActivity() {
 
 
         //TODO: Fikse dette til quiz
-        val clickedPin = intent.getStringExtra("value")
-        if(clickedPin == "1") {
-            println("Dette er quiz 1")
-        } else if(clickedPin == "2") {
-            println("Dette er quiz 2")
-        } else if(clickedPin == "3") {
-            println("Dette er quiz 3")
-        } else if(clickedPin == "4") {
-            println("Dette er quiz 4")
-        } else if(clickedPin == "5") {
-            println("Dette er quiz 5")
-        }
 
 
     }
@@ -93,16 +82,54 @@ class QuizActivity: AppCompatActivity() {
        var radioButton3 = findViewById<RadioButton>(R.id.option_three)
        var radioButton4 = findViewById<RadioButton>(R.id.option_four)
 
-        questionView.text = question!!.question
-        optionOne.text = question?.optionOne
-        optionTwo.text = question?.optionTwo
-        optionThree.text = question?.optionThree
-        optionFour.text = question?.optionFour
-
         /*optionOne.setOnClickListener(this)
         optionTwo.setOnClickListener(this)
         optionThree.setOnClickListener(this)
         optionFour.setOnClickListener(this)*/
+
+
+        val clickedPin = intent.getStringExtra("value")
+        if(clickedPin == "1") {
+            mCurrentP = 1
+            val question = currentQList!![mCurrentP - 1]
+            questionView.text = question!!.question
+            optionOne.text = question?.optionOne
+            optionTwo.text = question?.optionTwo
+            optionThree.text = question?.optionThree
+            optionFour.text = question?.optionFour
+        } else if(clickedPin == "2") {
+            mCurrentP = 2
+            val question2 = currentQList!![mCurrentP - 1]
+            questionView.text = question2!!.question
+            optionOne.text = question2?.optionOne
+            optionTwo.text = question2?.optionTwo
+            optionThree.text = question2?.optionThree
+            optionFour.text = question2?.optionFour
+        } else if(clickedPin == "3") {
+            mCurrentP = 3
+            val question3 = currentQList!![mCurrentP - 1]
+            questionView.text = question3!!.question
+            optionOne.text = question3?.optionOne
+            optionTwo.text = question3?.optionTwo
+            optionThree.text = question3?.optionThree
+            optionFour.text = question3?.optionFour
+        } else if(clickedPin == "4") {
+            mCurrentP = 4
+            val question4 = currentQList!![mCurrentP - 1]
+            questionView.text = question4!!.question
+            optionOne.text = question4?.optionOne
+            optionTwo.text = question4?.optionTwo
+            optionThree.text = question4?.optionThree
+            optionFour.text = question4?.optionFour
+        } else if(clickedPin == "5") {
+            mCurrentP = 5
+            val question5 = currentQList!![mCurrentP - 1]
+            questionView.text = question5!!.question
+            optionOne.text = question5?.optionOne
+            optionTwo.text = question5?.optionTwo
+            optionThree.text = question5?.optionThree
+            optionFour.text = question5?.optionFour
+        }
 
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
@@ -132,11 +159,22 @@ class QuizActivity: AppCompatActivity() {
                     }
                     val i = Intent(this, SummaryActivity::class.java)
                     startActivity(i)
-                } else {
-                    println(check)
-                    println("check")
-                    val i = Intent(this, RouteActivity::class.java)
+                } else if(clickedPin?.toInt() == 10) {
+                    for (i in 6..10) {
+                        markerDao.setClicked(i, 0)
+                    }
+                    val i = Intent(this, SummaryActivity::class.java)
                     startActivity(i)
+                } else {
+                    if(clickedPin?.toInt()!! <= 5) {
+                        println(check)
+                        println("check")
+                        val i = Intent(this, RouteActivity::class.java)
+                        startActivity(i)
+                    } else {
+                        val i = Intent(this, HistoryRouteActivity::class.java)
+                        startActivity(i)
+                    }
                 }
             }
 
