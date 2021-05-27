@@ -19,3 +19,11 @@ class SplashActivity : AppCompatActivity() {
         }, 2000)
     }
 }
+//splash screen
+//TODO: quiz screen
+//TODO: map screen
+//TODO: route screen
+//TODO: post screen
+//TODO: sign in screen
+//TODO: sign up screen
+//TODO: summary screen

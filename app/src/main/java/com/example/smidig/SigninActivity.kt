@@ -10,8 +10,7 @@ import com.example.smidig.History.HistoryActivity
 import com.example.smidig.database.*
 import com.example.smidig.quiz.QuizActivity
 
-
-//TODO crashing when trying to a user that doesnt exist
+//TODO change so a user dont need to login. Only when visiting profile or doing a history
 
 class SigninActivity : AppCompatActivity() {
 
@@ -33,7 +32,6 @@ class SigninActivity : AppCompatActivity() {
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
         var user : Login = Login(0, "", "")
 
-//TODO this try/catch is useless
         try {
             user = Login(0, "keenHistorian", "Historian")
             loginDAO.addLogin(user)
