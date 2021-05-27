@@ -10,9 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:background="@color/blue"
-        android:elevation="15dp"
+        android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,8 +43,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@color/red"
+        android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,15 +66,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/infoIcon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/infoimage" />
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -87,14 +80,15 @@
 
     <EditText
         android:id="@+id/emailEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="270dp"
         android:background="@drawable/edittextstyling"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email"
         android:textColor="@color/white"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +96,7 @@
 
     <EditText
         android:id="@+id/passwordEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/edittextstyling"
@@ -110,6 +104,7 @@
         android:inputType="textPassword"
         android:text="Password"
         android:textColor="@color/white"
+        android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
@@ -139,6 +134,8 @@
         android:layout_width="212dp"
         android:layout_height="64dp"
         android:layout_marginTop="70dp"
+        android:elevation="5dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
@@ -167,4 +164,15 @@
             app:layout_constraintTop_toTopOf="@+id/buttonBG" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/infoimage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
