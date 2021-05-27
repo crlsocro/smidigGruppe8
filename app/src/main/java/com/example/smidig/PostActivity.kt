@@ -9,6 +9,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.*
 import com.example.smidig.History.HistoryActivity
+import com.example.smidig.History.Info
+import com.example.smidig.History.InfoConstants
+import com.example.smidig.quiz.Constants
+import com.example.smidig.quiz.Questions
 import com.example.smidig.quiz.QuizActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
@@ -17,6 +21,9 @@ class PostActivity : AppCompatActivity() {
 
     lateinit var runnable: Runnable
     private var handler = Handler()
+    private var mCurrentP: Int = 1
+    private var currentIList: ArrayList<Info>? = null
+    private var selectedOption: Int = 0
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -34,7 +41,7 @@ class PostActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@PostActivity, ProfileActivity::class.java)
+                val intent = Intent(this@PostActivity,  SigninActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
@@ -46,7 +53,8 @@ class PostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
-
+        currentIList = InfoConstants.getInfo()
+        setInfo()
         var completeBtn = findViewById<Button>(R.id.completeBtn)
         completeBtn.setOnClickListener {
             val i = Intent(this, QuizActivity::class.java)
@@ -65,42 +73,6 @@ class PostActivity : AppCompatActivity() {
 
         //TODO: rydde i dette rotet, lagt til for å adde forskjellig post text
 
-        var clickedPin = intent?.getStringExtra("value")
-
-        when (clickedPin) {
-            "1" -> {
-                println("dette er post 1")
-            }
-            "2" -> {
-                println("dette er påsssst 2")
-            }
-            "3" -> {
-                println("dette er påsssst 3")
-            }
-            "4" -> {
-                println("dette er påsssst 4")
-            }
-            "5" -> {
-                println("dette er påsssst 5")
-            }
-            "6" -> {
-                println("Dette er pååst 66666")
-            }
-            "7" -> {
-                println("Dette er pååst 77")
-            }
-            "8" -> {
-                println("Dette er pååst 8888")
-            }
-            "9" -> {
-                println("Dette er pååst 9999")
-            }
-            "10" -> {
-                println("Dette er pååst 100000000")
-            }
-
-            //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
-        }
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
 
@@ -112,19 +84,19 @@ class PostActivity : AppCompatActivity() {
         var back = findViewById<ImageView>(R.id.backward)
         var forward = findViewById<ImageView>(R.id.forward)
         var play = findViewById<ImageView>(R.id.play)
-        play.setOnClickListener{
+        play.setOnClickListener {
 
-            if(!mediaPlayer.isPlaying){
+            if (!mediaPlayer.isPlaying) {
                 mediaPlayer.start()
                 play.setImageResource(R.drawable.ic_baseline_pause_24)
-            }else{
+            } else {
                 mediaPlayer.pause()
                 play.setImageResource(R.drawable.ic_action_play)
             }
         }
-        seekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if(fromUser){
+                if (fromUser) {
                     mediaPlayer.seekTo(progress)
                 }
             }
@@ -148,4 +120,77 @@ class PostActivity : AppCompatActivity() {
         }
     }
 
+    private fun setInfo() {
+        mCurrentP = 1
+        val info = currentIList!![mCurrentP - 1]
+        val infoText = findViewById<TextView>(R.id.postParapraghText)
+        val title = findViewById<TextView>(R.id.postText)
+
+        var clickedPin = intent?.getStringExtra("value")
+        when (clickedPin) {
+            "1" -> {
+                mCurrentP = 1
+                val info = currentIList!![mCurrentP - 1]
+                infoText.text = info!!.info
+                title.text = info?.title
+            }
+            "2" -> {
+                mCurrentP = 2
+                val info2 = currentIList!![mCurrentP - 1]
+                infoText.text = info2!!.info
+                title.text = info2?.title
+            }
+            "3" -> {
+                mCurrentP = 3
+                val info3 = currentIList!![mCurrentP - 1]
+                infoText.text = info3!!.info
+                title.text = info3?.title
+            }
+            "4" -> {
+                mCurrentP = 4
+                val info4 = currentIList!![mCurrentP - 1]
+                infoText.text = info4!!.info
+                title.text = info4?.title
+            }
+            "5" -> {
+                mCurrentP = 5
+                val info5 = currentIList!![mCurrentP - 1]
+                infoText.text = info5!!.info
+                title.text = info5?.title
+            }
+            "6" -> {
+                mCurrentP = 1
+                val info = currentIList!![mCurrentP - 1]
+                infoText.text = info!!.info
+                title.text = info?.title
+            }
+            "7" -> {
+                mCurrentP = 2
+                val info2 = currentIList!![mCurrentP - 1]
+                infoText.text = info2!!.info
+                title.text = info2?.title
+            }
+            "8" -> {
+                mCurrentP = 3
+                val info3 = currentIList!![mCurrentP - 1]
+                infoText.text = info3!!.info
+                title.text = info3?.title
+            }
+            "9" -> {
+                mCurrentP = 4
+                val info4 = currentIList!![mCurrentP - 1]
+                infoText.text = info4!!.info
+                title.text = info4?.title
+            }
+            "10" -> {
+                mCurrentP = 5
+                val info5 = currentIList!![mCurrentP - 1]
+                infoText.text = info5!!.info
+                title.text = info5?.title
+            }
+
+            //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
+        }
+    }
 }
+

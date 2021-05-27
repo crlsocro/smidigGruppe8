@@ -42,7 +42,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@MapsActivity, ProfileActivity::class.java)
+                val intent = Intent(this@MapsActivity, SigninActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

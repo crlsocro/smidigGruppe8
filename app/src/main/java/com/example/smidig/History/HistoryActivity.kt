@@ -32,7 +32,7 @@ class HistoryActivity : AppCompatActivity(){
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@HistoryActivity, ProfileActivity::class.java)
+                val intent = Intent(this@HistoryActivity, SigninActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

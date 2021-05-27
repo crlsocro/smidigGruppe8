@@ -142,75 +142,63 @@
             android:layout_width="wrap_content"
             android:layout_height="130dp"
             android:layout_marginTop="20dp"
-            android:text=" Nonneseter kloster ble sannsynligvis grunnlagt i ca.
-1150 og er omtalt av Snorre. Klosteret tilhørte
-benediktinerordens kvinnelige gren. Klosteret var viet
-til den hellige Maria. Klosteret var en stor jordeier og
-eide helt eller delvis 272 gårder i Østlandsområdet.
-Klosteret lå nær Hovinbekken og lå utenfor
-middelalderbyen. Et hjørne av det man mener kan ha
-vært klosterkirken ble funnet da Schweigaards gate ble
-utbedret i 1879. To år tidligere kan store deler av kirken
-ha blitt fjernet da man bygde Schweigaards gate 50.
-Det skal finnes rester under Schweigaards gate 55 og
-Grønlandsleiret 73
-"
+            android:text=" Testing"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/postText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/progressSeekBar"
-            android:layout_width="wrap_content"
-            android:layout_height="115dp"
-            android:gravity="center"
-            android:layout_marginHorizontal="50dp"
-            app:layout_constraintBottom_toBottomOf="@+id/postTextLayout"
-            tools:ignore="MissingConstraints"
+    <LinearLayout
+        android:id="@+id/progressSeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="115dp"
+        android:gravity="center"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/postTextLayout"
+        tools:ignore="MissingConstraints"
 
-            tools:layout_editor_absoluteX="16dp">
-            <SeekBar
-                android:id="@+id/seekBar"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:progress="50"
-                tools:ignore="MissingConstraints" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
+        tools:layout_editor_absoluteX="16dp">
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/progressSeekBar"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp">
-            <ImageView
-                android:id="@+id/backward"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_bg"
-                android:scaleX="-1"
-                android:src="@drawable/ic_baseline_fast_forward_24"
-                />
+            android:progress="50"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/progressSeekBar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp">
+        <ImageView
+            android:id="@+id/backward"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_bg"
+            android:scaleX="-1"
+            android:src="@drawable/ic_baseline_fast_forward_24"
+            />
 
-            <ImageView
-                android:id="@+id/play"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_bg"
-                android:src="@drawable/ic_action_play"
+        <ImageView
+            android:id="@+id/play"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_bg"
+            android:src="@drawable/ic_action_play"
 
-                />
-            <ImageView
-                android:id="@+id/forward"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="@drawable/btn_bg"
-                android:src="@drawable/ic_baseline_fast_forward_24" />
+            />
+        <ImageView
+            android:id="@+id/forward"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_bg"
+            android:src="@drawable/ic_baseline_fast_forward_24" />
     </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

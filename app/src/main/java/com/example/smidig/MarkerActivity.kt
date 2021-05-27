@@ -30,7 +30,7 @@ class MarkerActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
-                val intent = Intent(this@MarkerActivity, ProfileActivity::class.java)
+                val intent = Intent(this@MarkerActivity, SigninActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
