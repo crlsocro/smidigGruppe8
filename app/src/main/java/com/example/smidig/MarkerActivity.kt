@@ -7,6 +7,7 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -61,7 +62,7 @@ class MarkerActivity : AppCompatActivity() {
 
         webView.loadUrl("https://www.google.com/maps/d/embed?mid=1Xx48rtXPMkjq9f7B7NXAW-gcQ5l7h-AT&hl=en")
 
-        var completeBtn = findViewById<Button>(R.id.completeBtn)
+        var completeBtn = findViewById<ImageView>(R.id.buttonBG)
         completeBtn.setOnClickListener{
             val i = Intent(this, RouteActivity::class.java)
             startActivity(i)
