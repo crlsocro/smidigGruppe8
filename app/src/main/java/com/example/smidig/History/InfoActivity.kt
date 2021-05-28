@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
+import com.example.smidig.Profile.ProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
