@@ -80,16 +80,43 @@
             android:elevation="5dp"
             android:layout_margin="30dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/yellow"/>
+            android:textColor="@color/yellow">
+        </TextView>
 
-        <Button
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/completeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="30dp"
-            android:gravity="center"
-            android:text="START" />
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:elevation="5dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgotPasswordBtn">
+
+            <ImageView
+                android:id="@+id/buttonBG"
+                android:layout_width="204dp"
+                android:layout_height="62dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/buttonone" />
+
+            <TextView
+                android:id="@+id/loginText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Start"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="@+id/buttonBG"
+                app:layout_constraintStart_toStartOf="@+id/buttonBG"
+                app:layout_constraintTop_toTopOf="@+id/buttonBG" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
