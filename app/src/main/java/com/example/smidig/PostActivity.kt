@@ -124,7 +124,7 @@ class PostActivity : AppCompatActivity() {
         mCurrentP = 1
         val info = currentIList!![mCurrentP - 1]
         val infoText = findViewById<TextView>(R.id.postParapraghText)
-        val title = findViewById<TextView>(R.id.postText)
+        val title = findViewById<TextView>(R.id.textView2)
 
         var clickedPin = intent?.getStringExtra("value")
         when (clickedPin) {

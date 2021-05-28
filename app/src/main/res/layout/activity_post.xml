@@ -136,6 +136,39 @@
         app:menu="@menu/footer" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:elevation="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapImage">
+
+        <ImageView
+            android:id="@+id/bannerIcon"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/banner" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Plassnavn"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bannerIcon"
+            app:layout_constraintEnd_toEndOf="@+id/bannerIcon"
+            app:layout_constraintStart_toStartOf="@+id/bannerIcon"
+            app:layout_constraintTop_toTopOf="@+id/bannerIcon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/postTextLayout"
         android:layout_width="330dp"
         android:layout_height="290dp"
@@ -145,29 +178,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapImage"
         android:layout_marginHorizontal="50dp">
-        <TextView
-            android:id="@+id/postText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="POSTTEKST"
-            android:drawableRight="@drawable/ic_action_volume"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/postParapraghText"
             android:layout_width="wrap_content"
             android:layout_height="170dp"
-            android:layout_marginTop="10dp"
             android:text=" Testing"
-            android:textColor="@color/white"
+            android:textColor="@color/yellow"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/postText" />
+            tools:layout_editor_absoluteY="37dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
