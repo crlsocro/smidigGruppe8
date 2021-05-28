@@ -80,7 +80,8 @@
             android:elevation="5dp"
             android:layout_margin="30dp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/yellow"/>
+            android:textColor="@color/yellow">
+        </TextView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/completeBtn"

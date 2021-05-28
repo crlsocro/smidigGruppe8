@@ -3,13 +3,10 @@ package com.example.smidig
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import com.example.smidig.History.HistoryActivity
+import com.example.smidig.Profile.ProfileActivity
 import com.example.smidig.database.*
-import com.example.smidig.quiz.QuizActivity
 
 //TODO change so a user dont need to login. Only when visiting profile or doing a history
 
