@@ -10,6 +10,8 @@ import android.widget.Toast
 import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+//TODO TITTELEN ER HARD KODET!!
+
 class SummaryActivity : AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -45,16 +47,6 @@ class SummaryActivity : AppCompatActivity() {
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation6)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
-        //Copied from https://www.geeksforgeeks.org/ratingbar-in-kotlin/
-        val rBar = findViewById<RatingBar>(R.id.rBar)
-        if (rBar != null) {
-            val button = findViewById<Button>(R.id.button)
-            button?.setOnClickListener {
-                val msg = rBar.rating.toString()
-                Toast.makeText(this@SummaryActivity,
-                    "Rating is: "+msg, Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     fun toMap(view: View) {
