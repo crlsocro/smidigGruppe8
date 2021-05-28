@@ -8,30 +8,38 @@
     android:background="@drawable/loginpage"
     tools:context=".PostActivity">
 
-    <Button
-        android:id="@+id/completeBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fullfør"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postTextLayout" />
-
-    <ImageView
-        android:id="@+id/mapImage"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="40dp"
+        android:background="@color/red"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/pageInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UTFORSK"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
+        android:background="@color/blue"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -50,61 +58,71 @@
 
         <ImageView
             android:id="@+id/backIcon"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="50dp"
+            android:layout_marginStart="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_left_24" />
+            app:srcCompat="@drawable/buttontwo" />
 
-        <View
-            android:id="@+id/dividerHeader1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/backIcon"
+            app:layout_constraintEnd_toEndOf="@+id/backIcon"
+            app:layout_constraintStart_toStartOf="@+id/backIcon"
+            app:layout_constraintTop_toTopOf="@+id/backIcon"
+            app:srcCompat="@drawable/backarrow" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/completeBtn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="64dp"
+        android:elevation="5dp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-        <TextView
-            android:id="@+id/pageInfoText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LØYPENAVN - OPPSUMMERING"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/postTextLayout">
 
         <ImageView
-            android:id="@+id/infoIcon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="10dp"
+            android:id="@+id/buttonBG"
+            android:layout_width="204dp"
+            android:layout_height="62dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_info_24" />
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/buttonone" />
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Fullfør"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/buttonBG"
+            app:layout_constraintStart_toStartOf="@+id/buttonBG"
+            app:layout_constraintTop_toTopOf="@+id/buttonBG" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/mapImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -119,9 +137,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/postTextLayout"
-        android:layout_width="392dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="330dp"
+        android:layout_height="290dp"
+        android:background="@drawable/edittextstyling"
+        android:elevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapImage"
@@ -141,8 +160,8 @@
         <TextView
             android:id="@+id/postParapraghText"
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="10dp"
             android:text=" Testing"
             android:textColor="@color/white"
             android:textSize="14sp"
@@ -153,7 +172,8 @@
 
     <LinearLayout
         android:id="@+id/progressSeekBar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:elevation="5dp"
         android:layout_height="115dp"
         android:gravity="center"
         android:layout_marginHorizontal="50dp"
@@ -170,8 +190,9 @@
             tools:ignore="MissingConstraints" />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="5dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/progressSeekBar"
