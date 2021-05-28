@@ -55,7 +55,7 @@ class PostActivity : AppCompatActivity() {
         setContentView(R.layout.activity_post)
         currentIList = InfoConstants.getInfo()
         setInfo()
-        var completeBtn = findViewById<Button>(R.id.completeBtn)
+        var completeBtn = findViewById<ImageView>(R.id.buttonBG)
         completeBtn.setOnClickListener {
             val i = Intent(this, QuizActivity::class.java)
             var clickedPin = intent.getStringExtra("value")
@@ -124,7 +124,7 @@ class PostActivity : AppCompatActivity() {
         mCurrentP = 1
         val info = currentIList!![mCurrentP - 1]
         val infoText = findViewById<TextView>(R.id.postParapraghText)
-        val title = findViewById<TextView>(R.id.postText)
+        val title = findViewById<TextView>(R.id.textView2)
 
         var clickedPin = intent?.getStringExtra("value")
         when (clickedPin) {
