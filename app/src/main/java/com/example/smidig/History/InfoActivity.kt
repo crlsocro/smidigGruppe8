@@ -46,7 +46,7 @@ class InfoActivity: AppCompatActivity() {
         setContentView(R.layout.activity_info)
         supportActionBar?.hide()
 
-        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation2)
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation4)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
