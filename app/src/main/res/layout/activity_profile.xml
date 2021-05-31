@@ -186,225 +186,236 @@
     <ScrollView
         android:id="@id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="364dp"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
-        tools:itemCount="55"
-        tools:ignore="ScrollViewCount">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ScrollViewCount"
+        tools:itemCount="55">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/scroll1"
-            android:layout_width="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_height="80dp"
-            android:orientation="vertical"
-            android:background="@color/blue">
-
-            <TextView
-                android:id="@+id/text"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:textColor="@color/white"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="6dp"
-                android:text="Kilometer"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ProgressBar
-                android:id="@+id/progressBar1"
-                style="?android:attr/progressBarStyleHorizontal"
+            <RelativeLayout
+                android:id="@+id/scroll1"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="24dp"
-                android:background="@color/black"
-                android:progress="25"
-                app:layout_constraintBottom_toBottomOf="@+id/text"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.744" />
-
-            <TextView
-                android:id="@+id/progressNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="24dp"
-                android:text="11/30"
-                android:textColor="@color/white"
-                android:textSize="8sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/icon"
-                android:layout_width="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon2"
-                android:layout_marginLeft="100dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon3"
-                android:layout_marginLeft="175dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon4"
-                android:layout_marginLeft="250dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/scroll2"
-            android:layout_width="match_parent"
-            android:layout_below="@id/scroll1"
-            android:layout_height="80dp">
-            <TextView
-                android:id="@+id/textP"
-                android:layout_width="wrap_content"
                 android:layout_height="80dp"
-                android:textColor="@color/white"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="6dp"
-                android:text="Poster"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="0dp"
+                android:background="@color/blue"
+                android:orientation="vertical">
 
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyleHorizontal"
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Kilometer"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/black"
+                    android:progress="25"
+                    app:layout_constraintBottom_toBottomOf="@+id/text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.744" />
+
+                <TextView
+                    android:id="@+id/progressNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginTop="24dp"
+                    android:text="11/30"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/scroll2"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="24dp"
-                android:background="@color/black"
-                android:progress="20"
-                app:layout_constraintBottom_toBottomOf="@+id/textP"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.744" />
+                android:layout_height="80dp"
+                android:layout_below="@id/scroll1">
 
-            <TextView
-                android:id="@+id/progressNumber3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="76dp"
-                android:layout_marginTop="24dp"
-                android:text="1/5"
-                android:textColor="@color/white"
-                android:textSize="8sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon1"
-                android:layout_width="25dp"
-                android:layout_marginLeft="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon21"
-                android:layout_marginLeft="100dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon31"
-                android:layout_marginLeft="175dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageView
-                android:id="@+id/icon41"
-                android:layout_marginLeft="250dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:foregroundGravity="center"
-                android:src="@drawable/ic_action_pin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/textP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Poster"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar2"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/black"
+                    android:progress="20"
+                    app:layout_constraintBottom_toBottomOf="@+id/textP"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.744" />
+
+                <TextView
+                    android:id="@+id/progressNumber3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="76dp"
+                    android:layout_marginTop="24dp"
+                    android:text="1/5"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon21"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon31"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="175dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icon41"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="250dp"
+                    android:layout_marginTop="40dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_action_pin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/scroll3"
                 android:layout_width="match_parent"
-                android:layout_below="@id/scroll2"
                 android:layout_height="80dp"
+                android:layout_below="@id/scroll2"
                 android:background="@color/blue">
+
                 <TextView
                     android:id="@+id/textA"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
-                    android:textColor="@color/white"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="6dp"
                     android:text="Riktige Svar"
+                    android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -413,14 +424,14 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_marginTop="25dp"
                     android:layout_marginStart="24dp"
+                    android:layout_marginTop="25dp"
                     android:background="@color/black"
                     android:progress="22"
                     app:layout_constraintBottom_toBottomOf="@+id/textA"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.744"/>
+                    app:layout_constraintVertical_bias="0.744" />
 
                 <TextView
                     android:id="@+id/progressNumber4"
@@ -434,12 +445,13 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/iconA"
                     android:layout_width="25dp"
-                    android:layout_marginLeft="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
@@ -447,12 +459,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon21A"
-                    android:layout_marginLeft="100dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
@@ -460,12 +473,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon31A"
-                    android:layout_marginLeft="175dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
@@ -473,12 +487,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon41A"
-                    android:layout_marginLeft="250dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="250dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
@@ -487,19 +502,21 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/scroll4"
                 android:layout_width="match_parent"
-                android:layout_below="@id/scroll3"
-                android:layout_height="80dp">
+                android:layout_height="80dp"
+                android:layout_below="@id/scroll3">
+
                 <TextView
                     android:id="@+id/textR"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
-                    android:textColor="@color/white"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="6dp"
                     android:text="Repriser"
+                    android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -508,14 +525,14 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_marginTop="25dp"
                     android:layout_marginStart="24dp"
+                    android:layout_marginTop="25dp"
                     android:background="@color/black"
                     android:progress="01"
                     app:layout_constraintBottom_toBottomOf="@+id/textR"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.744"/>
+                    app:layout_constraintVertical_bias="0.744" />
 
                 <TextView
                     android:id="@+id/progressNumber5"
@@ -529,12 +546,13 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/iconR"
                     android:layout_width="25dp"
-                    android:layout_marginLeft="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
@@ -542,12 +560,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon21R"
-                    android:layout_marginLeft="100dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
@@ -555,12 +574,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon31R"
-                    android:layout_marginLeft="175dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
@@ -568,12 +588,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon41R"
-                    android:layout_marginLeft="250dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="250dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
@@ -582,20 +603,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/scroll5"
                 android:layout_width="match_parent"
-                android:layout_below="@id/scroll4"
                 android:layout_height="80dp"
+                android:layout_below="@id/scroll4"
                 android:background="@color/blue">
+
                 <TextView
                     android:id="@+id/textH"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:textColor="@color/white"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="6dp"
                     android:text="Historier"
+                    android:textColor="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -604,14 +627,14 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_marginTop="25dp"
                     android:layout_marginStart="24dp"
+                    android:layout_marginTop="25dp"
                     android:background="@color/black"
                     android:progress="01"
                     app:layout_constraintBottom_toBottomOf="@+id/textH"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.744"/>
+                    app:layout_constraintVertical_bias="0.744" />
 
                 <TextView
                     android:id="@+id/progressNumber6"
@@ -625,12 +648,13 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon21H"
                     android:layout_width="25dp"
-                    android:layout_marginLeft="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_menu_book_24"
@@ -638,12 +662,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon22H"
-                    android:layout_marginLeft="100dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_menu_book_24"
@@ -651,12 +676,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon23H"
-                    android:layout_marginLeft="175dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_menu_book_24"
@@ -664,12 +690,13 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <ImageView
                     android:id="@+id/icon2H"
-                    android:layout_marginLeft="250dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="250dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_baseline_menu_book_24"
@@ -678,7 +705,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </RelativeLayout>
-    </RelativeLayout>
+        </RelativeLayout>
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
