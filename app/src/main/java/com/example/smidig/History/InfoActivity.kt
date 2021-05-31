@@ -68,7 +68,7 @@ class InfoActivity: AppCompatActivity() {
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
 
-        webView.loadUrl("https://www.google.com/maps/d/embed?mid=186sevV9ZCwa93pp86Alg8P2sP9mCviI9&ll=59.909377174847734%2C10.767309476730954&z=16")
+        webView.loadUrl("https://www.google.com/maps/d/embed?mid=1JKsxtkyA7Opg17O2bQ0iOGjaGJJKXqJo")
 
         var completeBtn = findViewById<Button>(R.id.completeBtn)
         completeBtn.setOnClickListener{
