@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.database.Login
 import com.example.smidig.database.LoginDao
@@ -22,11 +23,11 @@ class SignUpActivity : AppCompatActivity() {
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
 
 
-        var submit = findViewById<Button>(R.id.submitR)
+        var submit = findViewById<ImageView>(R.id.buttonBG)
         submit.setOnClickListener {
 
-            val username = findViewById<EditText>(R.id.editUsername)
-            val password = findViewById<EditText>(R.id.editPassword)
+            val username = findViewById<EditText>(R.id.emailEditText)
+            val password = findViewById<EditText>(R.id.passwordEditText)
 
             var user : Login = Login(0, username.text.toString(), password.text.toString())
             loginDAO.addLogin(user)
