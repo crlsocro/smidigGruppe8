@@ -24,15 +24,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="UTFORSK"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="5dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/infoimage" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -122,7 +130,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        android:src="@drawable/map" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -160,8 +168,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="Plassnavn"
+            android:fontFamily="@font/retrojump"
             android:textColor="@color/yellow"
-            android:textSize="25sp"
+            android:textSize="65sp"
             app:layout_constraintBottom_toBottomOf="@+id/bannerIcon"
             app:layout_constraintEnd_toEndOf="@+id/bannerIcon"
             app:layout_constraintStart_toStartOf="@+id/bannerIcon"

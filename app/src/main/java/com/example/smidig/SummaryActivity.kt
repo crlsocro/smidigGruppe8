@@ -1,10 +1,12 @@
 package com.example.smidig
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.Toast
 import com.example.smidig.History.HistoryActivity
@@ -46,10 +48,14 @@ class SummaryActivity : AppCompatActivity() {
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation6)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+        val mapBtn = findViewById<ImageView>(R.id.buttonBG)
+        mapBtn.setOnClickListener {
+            toMap()
+        }
 
     }
 
-    fun toMap(view: View) {
+    private fun toMap() {
         val intent = Intent(this, MapsActivity::class.java).apply {
         }
         startActivity(intent)
