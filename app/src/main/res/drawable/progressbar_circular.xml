@@ -10,7 +10,7 @@
         android:thickness="8dp"
         >
 
-        <solid android:color="@color/white" />
+        <solid android:color="@color/red" />
     </shape>
 </item>
 
@@ -22,7 +22,7 @@
             android:innerRadius="68dp"
             android:thickness="8dp"
             android:useLevel="true">
-            <solid android:color="@color/purple_200" />
+            <solid android:color="@color/yellow" />
         </shape>
     </clip>
 </item>
