@@ -22,7 +22,7 @@
             android:id="@+id/pageInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LØYPENAVN - OPPSUMMERING"
+            android:text="GRØNLAND - OPPSUMMERING"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
