@@ -8,6 +8,41 @@
     tools:context=".History.InfoActivity"
     android:background="@drawable/loginpage"
     >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/red"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/pageInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRØNNLAND"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/infoIcon"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="5dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/infoimage" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -87,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Plassnavn"
+            android:text="Grønland"
             android:textColor="@color/yellow"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="@+id/bannerIcon"
@@ -114,12 +149,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Egner seg for: alle"
-                android:textColor="@color/white"/>
+                android:textColor="@color/yellow"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_action_pin"
-                android:layout_toRightOf="@id/grade" />
+                android:layout_toRightOf="@id/grade"
+                app:tint="@color/yellow"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -151,10 +187,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Beskrivelse:
+            android:text="Beskrivelse: \n
 
-           Sed felis urna, tempus nec egestas eget, congue eu purus. Fusce varius, ante in fermentum placerat, tellus augue rutrum diam, in tincidunt nibh urna sed orci. Duis vehicula mauris a diam sodales, quis bibendum dolor pellentesque.
-           Curabitur vitae condimentum neque. Nunc ut ligula mauris. "
+
+
+
+            Dette er en løype som omhandler de mange historiske bygningene. Disse er markert med blå skilt og har en tekst om hvem eller hva som skjedde der, og når det skjedde. Noen er mordere, andre er forfrattere."
             android:textStyle="bold"
             android:textSize="20sp"
             android:background="@drawable/edittextstyling"
