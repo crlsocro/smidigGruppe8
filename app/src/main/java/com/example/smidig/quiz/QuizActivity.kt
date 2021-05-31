@@ -58,7 +58,7 @@ class QuizActivity: AppCompatActivity() {
 
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
-            val i = Intent(this, PostActivity::class.java)
+            val i = Intent(this, HistoryRouteActivity::class.java)
             startActivity(i)
         }
 
