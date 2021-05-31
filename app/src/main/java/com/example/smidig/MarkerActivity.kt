@@ -62,7 +62,7 @@ class MarkerActivity : AppCompatActivity() {
         webView.settings.loadWithOverviewMode = true
         webView.settings.useWideViewPort = true
 
-        webView.loadUrl("https://www.google.com/maps/d/embed?mid=1Xx48rtXPMkjq9f7B7NXAW-gcQ5l7h-AT&hl=en")
+        webView.loadUrl("https://www.google.com/maps/d/embed?mid=1JKsxtkyA7Opg17O2bQ0iOGjaGJJKXqJo")
 
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
