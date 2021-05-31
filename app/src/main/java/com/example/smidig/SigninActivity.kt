@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.example.smidig.Profile.ProfileActivity
 import com.example.smidig.database.*
 
-//TODO change so a user dont need to login. Only when visiting profile or doing a history
+
 
 class SigninActivity : AppCompatActivity() {
 

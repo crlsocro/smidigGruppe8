@@ -13,9 +13,6 @@ class ProfileActivity: AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@ProfileActivity, MapsActivity::class.java)
                 startActivity(intent)

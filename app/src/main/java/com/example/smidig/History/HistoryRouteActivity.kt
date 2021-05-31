@@ -76,9 +76,6 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@HistoryRouteActivity, MapsActivity::class.java)
                 startActivity(intent)

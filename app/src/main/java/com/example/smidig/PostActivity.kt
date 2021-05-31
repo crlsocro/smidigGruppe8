@@ -28,9 +28,6 @@ class PostActivity : AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@PostActivity, MapsActivity::class.java)
                 startActivity(intent)
@@ -72,7 +69,7 @@ class PostActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        //TODO: rydde i dette rotet, lagt til for å adde forskjellig post text
+
 
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
@@ -82,8 +79,6 @@ class PostActivity : AppCompatActivity() {
         seekBar.progress = 0
         seekBar.max = mediaPlayer.duration
         val audioManager: AudioManager = getSystemService(AUDIO_SERVICE) as AudioManager
-        var back = findViewById<ImageView>(R.id.backward)
-        var forward = findViewById<ImageView>(R.id.forward)
         var play = findViewById<ImageView>(R.id.play)
         play.setOnClickListener {
 
@@ -103,11 +98,8 @@ class PostActivity : AppCompatActivity() {
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
             }
-
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
             }
         })
         runnable = Runnable {
@@ -209,8 +201,6 @@ class PostActivity : AppCompatActivity() {
                 title.text = info5?.title
                 image.setImageResource(R.drawable.ulvehiet)
             }
-
-            //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
         }
     }
 }

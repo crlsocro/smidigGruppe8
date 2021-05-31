@@ -242,14 +242,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/progressSeekBar"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp">
-        <ImageView
-            android:id="@+id/backward"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_bg"
-            android:scaleX="-1"
-            android:src="@drawable/ic_baseline_fast_forward_24"
-            />
+
 
         <ImageView
             android:id="@+id/play"
@@ -257,14 +250,8 @@
             android:layout_height="50dp"
             android:background="@drawable/btn_bg"
             android:src="@drawable/ic_action_play"
-
             />
-        <ImageView
-            android:id="@+id/forward"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_bg"
-            android:src="@drawable/ic_baseline_fast_forward_24" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
