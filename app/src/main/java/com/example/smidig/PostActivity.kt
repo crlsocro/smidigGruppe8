@@ -3,6 +3,7 @@ package com.example.smidig
 import android.content.ClipData
 import android.content.Intent
 import android.media.AudioManager
+import android.media.Image
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -118,6 +119,14 @@ class PostActivity : AppCompatActivity() {
             play.setImageResource(R.drawable.ic_action_play)
             seekBar.progress = 0
         }
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Les og/eller hør for å fullføre posten \n",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setInfo() {
@@ -125,6 +134,7 @@ class PostActivity : AppCompatActivity() {
         val info = currentIList!![mCurrentP - 1]
         val infoText = findViewById<TextView>(R.id.postParapraghText)
         val title = findViewById<TextView>(R.id.textView2)
+        val image = findViewById<ImageView>(R.id.mapImage)
 
         var clickedPin = intent?.getStringExtra("value")
         when (clickedPin) {
@@ -133,60 +143,71 @@ class PostActivity : AppCompatActivity() {
                 val info = currentIList!![mCurrentP - 1]
                 infoText.text = info!!.info
                 title.text = info?.title
+                image.setImageResource(R.drawable.nonneseter)
             }
             "2" -> {
                 mCurrentP = 2
                 val info2 = currentIList!![mCurrentP - 1]
                 infoText.text = info2!!.info
                 title.text = info2?.title
+                image.setImageResource(R.drawable.josephine)
             }
             "3" -> {
                 mCurrentP = 3
                 val info3 = currentIList!![mCurrentP - 1]
                 infoText.text = info3!!.info
                 title.text = info3?.title
+                image.setImageResource(R.drawable.vaterlands)
             }
             "4" -> {
                 mCurrentP = 4
                 val info4 = currentIList!![mCurrentP - 1]
                 infoText.text = info4!!.info
                 title.text = info4?.title
+                image.setImageResource(R.drawable.toyen)
             }
             "5" -> {
                 mCurrentP = 5
                 val info5 = currentIList!![mCurrentP - 1]
                 infoText.text = info5!!.info
                 title.text = info5?.title
+                image.setImageResource(R.drawable.ulvehiet)
             }
             "6" -> {
                 mCurrentP = 1
                 val info = currentIList!![mCurrentP - 1]
                 infoText.text = info!!.info
                 title.text = info?.title
+                image.setImageResource(R.drawable.nonneseter)
+
             }
             "7" -> {
                 mCurrentP = 2
                 val info2 = currentIList!![mCurrentP - 1]
                 infoText.text = info2!!.info
                 title.text = info2?.title
+                image.setImageResource(R.drawable.josephine)
             }
             "8" -> {
                 mCurrentP = 3
                 val info3 = currentIList!![mCurrentP - 1]
                 infoText.text = info3!!.info
                 title.text = info3?.title
+                image.setImageResource(R.drawable.vaterlands)
             }
             "9" -> {
                 mCurrentP = 4
                 val info4 = currentIList!![mCurrentP - 1]
                 infoText.text = info4!!.info
                 title.text = info4?.title
+                image.setImageResource(R.drawable.toyen)
             }
             "10" -> {
                 mCurrentP = 5
                 val info5 = currentIList!![mCurrentP - 1]
                 infoText.text = info5!!.info
                 title.text = info5?.title
+                image.setImageResource(R.drawable.ulvehiet)
             }
 
             //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode

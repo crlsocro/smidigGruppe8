@@ -61,9 +61,13 @@ class QuizActivity: AppCompatActivity() {
             startActivity(i)
         }
 
-
-        //TODO: Fikse dette til quiz
-
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Klarer du å få alle riktig? \n",
+                Toast.LENGTH_SHORT).show()
+        }
 
     }
 
@@ -186,6 +190,7 @@ class QuizActivity: AppCompatActivity() {
         submitBtn.setOnClickListener {
 
             var markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
+            /*
             var quizDAO : QuizDao = MultiDatabase.get(this).getQDao()
 
             var quizTest : Quiz = Quiz(0, "Test", "test","test")
@@ -193,7 +198,7 @@ class QuizActivity: AppCompatActivity() {
 
             var test : Quiz = quizDAO.getQuizWithQuizId(1)
             println("test = " + test)
-            println("test.size")
+            println("test.size")*/
 
             var check = 0
 

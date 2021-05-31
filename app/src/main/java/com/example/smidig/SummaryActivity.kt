@@ -5,10 +5,7 @@ import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.Toast
+import android.widget.*
 import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -51,6 +48,14 @@ class SummaryActivity : AppCompatActivity() {
         val mapBtn = findViewById<ImageView>(R.id.buttonBG)
         mapBtn.setOnClickListener {
             toMap()
+        }
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Her ser du hvordan denne løypen gikk for deg \n",
+                Toast.LENGTH_SHORT).show()
         }
 
     }

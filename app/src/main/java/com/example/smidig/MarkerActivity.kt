@@ -8,6 +8,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -66,6 +68,14 @@ class MarkerActivity : AppCompatActivity() {
         completeBtn.setOnClickListener{
             val i = Intent(this, RouteActivity::class.java)
             startActivity(i)
+        }
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Klikk start for å følge denne løypen \n",
+                Toast.LENGTH_SHORT).show()
         }
 
     }

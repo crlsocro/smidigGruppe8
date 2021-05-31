@@ -96,11 +96,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="270dp"
         android:background="@drawable/edittextstyling"
+        android:elevation="5dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email"
+        android:text="Username"
         android:textColor="@color/white"
-        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,16 +122,6 @@
         app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <TextView
-        android:id="@+id/forgotPasswordBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Glemt passord?"
-        android:textColor="@color/yellow"
-        app:layout_constraintEnd_toEndOf="@+id/passwordEditText"
-        app:layout_constraintStart_toStartOf="@+id/passwordEditText"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
-
-    <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -143,15 +133,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttonLogin"
-        android:layout_width="212dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="5dp"
-
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordBtn">
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText">
 
         <ImageView
             android:id="@+id/buttonBG"
@@ -167,10 +156,11 @@
             android:id="@+id/loginText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/retrojump"
             android:text="Logg Inn"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="55sp"
             app:layout_constraintEnd_toEndOf="@+id/buttonBG"
             app:layout_constraintStart_toStartOf="@+id/buttonBG"
             app:layout_constraintTop_toTopOf="@+id/buttonBG" />
