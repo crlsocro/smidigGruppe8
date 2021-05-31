@@ -3,9 +3,7 @@ package com.example.smidig
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.database.Login
 import com.example.smidig.database.LoginDao
@@ -36,6 +34,14 @@ class SignUpActivity : AppCompatActivity() {
 
             val i = Intent(this, SigninActivity::class.java)
             startActivity(i)
+        }
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Registrer deg her for å kunne logge inn \n",
+                Toast.LENGTH_SHORT).show()
         }
 
     }

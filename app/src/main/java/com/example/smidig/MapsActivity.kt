@@ -5,6 +5,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
@@ -53,6 +55,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
 
     private var permissionDenied = false
     private lateinit var map: GoogleMap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -62,6 +65,14 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation3)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Velg en løype du vil følge \n",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {

@@ -119,6 +119,14 @@ class PostActivity : AppCompatActivity() {
             play.setImageResource(R.drawable.ic_action_play)
             seekBar.progress = 0
         }
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Les og/eller hør for å fullføre posten \n",
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setInfo() {

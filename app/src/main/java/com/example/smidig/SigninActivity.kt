@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.PopupMenu
+import android.widget.Toast
 import android.widget.TextView
 import com.example.smidig.Profile.ProfileActivity
 import com.example.smidig.database.*
@@ -59,6 +61,15 @@ class SigninActivity : AppCompatActivity() {
             }
         }
 
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Logg inn for å kunne lagre \n" +
+                    "hvor langt du har komt og \n" +
+                    "annen generell informasjon",
+                Toast.LENGTH_SHORT).show()
+        }
         btnRegister.setOnClickListener{
             val i = Intent(this, SignUpActivity::class.java)
             startActivity(i)
