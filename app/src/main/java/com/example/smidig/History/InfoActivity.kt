@@ -20,9 +20,6 @@ class InfoActivity: AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@InfoActivity, MapsActivity::class.java)
                 startActivity(intent)

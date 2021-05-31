@@ -9,15 +9,12 @@ import android.widget.*
 import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-//TODO TITTELEN ER HARD KODET!!
+
 
 class SummaryActivity : AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@SummaryActivity, MapsActivity::class.java)
                 startActivity(intent)

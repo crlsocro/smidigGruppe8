@@ -28,9 +28,6 @@ class PostActivity : AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@PostActivity, MapsActivity::class.java)
                 startActivity(intent)
@@ -72,7 +69,7 @@ class PostActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        //TODO: rydde i dette rotet, lagt til for å adde forskjellig post text
+
 
 
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode

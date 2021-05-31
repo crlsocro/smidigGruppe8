@@ -19,9 +19,6 @@ class MarkerActivity : AppCompatActivity() {
 
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.home -> {
-                return@OnNavigationItemSelectedListener false
-            }
             R.id.homepage -> {
                 val intent = Intent(this@MarkerActivity, MapsActivity::class.java)
                 startActivity(intent)
