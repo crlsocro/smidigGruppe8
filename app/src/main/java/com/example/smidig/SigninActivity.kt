@@ -75,6 +75,11 @@ class SigninActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, MapsActivity::class.java)
+            startActivity(i)
+        }
 
     }
 

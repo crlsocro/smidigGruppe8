@@ -44,5 +44,11 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT).show()
         }
 
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, SigninActivity::class.java)
+            startActivity(i)
+        }
+
     }
 }

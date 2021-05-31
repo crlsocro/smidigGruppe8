@@ -64,6 +64,12 @@ class MarkerActivity : AppCompatActivity() {
 
         webView.loadUrl("https://www.google.com/maps/d/embed?mid=1Xx48rtXPMkjq9f7B7NXAW-gcQ5l7h-AT&hl=en")
 
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, MapsActivity::class.java)
+            startActivity(i)
+        }
+
         var completeBtn = findViewById<ImageView>(R.id.buttonBG)
         completeBtn.setOnClickListener{
             val i = Intent(this, RouteActivity::class.java)

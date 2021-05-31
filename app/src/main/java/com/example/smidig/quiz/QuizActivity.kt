@@ -55,6 +55,7 @@ class QuizActivity: AppCompatActivity() {
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation5)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, PostActivity::class.java)
