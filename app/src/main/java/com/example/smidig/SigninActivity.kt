@@ -70,6 +70,7 @@ class SigninActivity : AppCompatActivity() {
                     "annen generell informasjon",
                 Toast.LENGTH_SHORT).show()
         }
+
         btnRegister.setOnClickListener{
             val i = Intent(this, SignUpActivity::class.java)
             startActivity(i)
