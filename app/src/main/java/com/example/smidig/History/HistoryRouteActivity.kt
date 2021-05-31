@@ -7,6 +7,7 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -62,6 +63,14 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
         goBackBtn.setOnClickListener {
             val i = Intent(this, InfoActivity::class.java)
             startActivity(i)
+        }
+
+        var infoBtn = findViewById<ImageView>(R.id.infoIcon)
+        infoBtn.setOnClickListener{
+            val popUp = PopupMenu(this, infoBtn)
+            val popUpToast = Toast.makeText(applicationContext,
+                "Gå til neste pin for å følge løypen \n",
+                Toast.LENGTH_SHORT).show()
         }
     }
 
