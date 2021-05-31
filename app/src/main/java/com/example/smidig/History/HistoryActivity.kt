@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.PopupMenu
+import android.widget.RelativeLayout
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.smidig.*
-import com.example.smidig.databinding.ActivityHistoryBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -41,12 +41,10 @@ class HistoryActivity : AppCompatActivity(){
 
     }
 
-    private var listAdapter = HistoryAdapter(ArrayList<HistoryStats>())
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var binding = ActivityHistoryBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+
+        setContentView(R.layout.activity_history)
         supportActionBar?.hide()
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation7)
@@ -58,10 +56,11 @@ class HistoryActivity : AppCompatActivity(){
             startActivity(i)
         }
 
-        binding.historyRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.historyRecyclerView.adapter = listAdapter
-        listAdapter.update(HistoryDummy().getHistory())
-
+        var gronlandBtn = findViewById<RelativeLayout>(R.id.scroll1)
+        gronlandBtn.setOnClickListener {
+            val i = Intent(this, InfoActivity::class.java)
+            startActivity(i)
+        }
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
