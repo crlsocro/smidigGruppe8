@@ -467,7 +467,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
 
                 <ImageView
                     android:id="@+id/icon21A"
@@ -478,11 +479,12 @@
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
-                    app:tint="@color/orange"
+
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/orange"/>
 
                 <ImageView
                     android:id="@+id/icon31A"
@@ -493,11 +495,11 @@
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
-                    app:tint="@color/quantum_grey"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/quantum_grey"/>
 
                 <ImageView
                     android:id="@+id/icon41A"
@@ -508,11 +510,11 @@
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
-                    app:tint="@color/yellow"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/yellow" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -561,8 +563,8 @@
 
                 <ImageView
                     android:id="@+id/iconR"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="40dp"
@@ -571,12 +573,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black"/>
 
                 <ImageView
                     android:id="@+id/icon21R"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
@@ -585,12 +588,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/orange"/>
 
                 <ImageView
                     android:id="@+id/icon31R"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
@@ -599,12 +603,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/quantum_grey"/>
 
                 <ImageView
                     android:id="@+id/icon41R"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="250dp"
                     android:layout_marginTop="40dp"
@@ -613,7 +618,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/yellow"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -663,59 +669,63 @@
 
                 <ImageView
                     android:id="@+id/icon21H"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
-                    android:src="@drawable/ic_baseline_menu_book_24"
+                    app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
 
                 <ImageView
                     android:id="@+id/icon22H"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="100dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
-                    android:src="@drawable/ic_baseline_menu_book_24"
+                    app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/orange"/>
 
                 <ImageView
                     android:id="@+id/icon23H"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
-                    android:src="@drawable/ic_baseline_menu_book_24"
+                    app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/quantum_grey" />
 
                 <ImageView
                     android:id="@+id/icon2H"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="250dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
-                    android:src="@drawable/ic_baseline_menu_book_24"
+                    app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/yellow"/>
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
