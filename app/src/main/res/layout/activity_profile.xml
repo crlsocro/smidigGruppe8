@@ -141,12 +141,10 @@
                 android:id="@+id/text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Du har gått
-                \n
-                \n
-7 km denne uken\n 28km denne måneden\n 47km totalt"
+                android:text="Du har gått\n\n 7 km denne uken\n 28km denne måneden\n 47km totalt"
                 android:textColor="@color/white"
                 android:layout_marginStart="15dp"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -169,12 +167,10 @@
                 android:id="@+id/text2"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:text="Du har besøkt
-            \n
-            \n 12  pins
-            \n 7 er nye \n 63 pins totalt"
+                android:gravity="center"
+                android:text="Du har besøkt\n\n 12  pins \n7 er nye \n 63 pins totalt"
                 android:textColor="@color/white"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="55dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -200,7 +196,7 @@
             <RelativeLayout
                 android:id="@+id/scroll1"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="110dp"
                 android:layout_marginTop="0dp"
                 android:background="@color/blue"
                 android:orientation="vertical">
@@ -219,12 +215,14 @@
                 <ProgressBar
                     android:id="@+id/progressBar1"
                     style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progressbar"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:layout_marginStart="24dp"
+                    android:layout_marginEnd="20dp"
                     android:layout_marginTop="25dp"
-                    android:background="@color/red"
-                    android:progress="37"
+                    android:background="@color/black"
+                    android:progress="100"
                     app:layout_constraintBottom_toBottomOf="@+id/text"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -234,21 +232,21 @@
                     android:id="@+id/progressNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="76dp"
-                    android:layout_marginTop="24dp"
-                    android:text="11/30"
+                    android:layout_marginStart="320dp"
+                    android:layout_marginTop="18dp"
+                    android:text="500/500"
                     android:textColor="@color/white"
-                    android:textSize="8sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/shoes"
@@ -260,14 +258,14 @@
 
                 <ImageView
                     android:id="@+id/icon2"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="88dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/shoes"
-                    app:tint="#cc7c34"
+                    app:tint="@color/orange_strong"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -275,8 +273,8 @@
 
                 <ImageView
                     android:id="@+id/icon3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
@@ -290,14 +288,14 @@
 
                 <ImageView
                     android:id="@+id/icon4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="250dp"
+                    android:layout_marginLeft="263dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/shoes"
-                    app:tint="@color/yellow"
+                    app:tint="@color/yellow_strong"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -307,7 +305,7 @@
             <RelativeLayout
                 android:id="@+id/scroll2"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="110dp"
                 android:layout_below="@id/scroll1">
 
                 <TextView
@@ -324,6 +322,8 @@
                 <ProgressBar
                     android:id="@+id/progressBar2"
                     style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:layout_marginEnd="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:layout_marginStart="24dp"
@@ -339,21 +339,21 @@
                     android:id="@+id/progressNumber3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="76dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="98dp"
+                    android:layout_marginTop="18dp"
                     android:text="1/5"
                     android:textColor="@color/white"
-                    android:textSize="8sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/icon1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_pin"
@@ -365,14 +365,15 @@
 
                 <ImageView
                     android:id="@+id/icon21"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="88dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_pin"
-                    app:tint="@color/orange"
+                    android:alpha="0.5"
+                    app:tint="@color/orange_strong"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -380,11 +381,12 @@
 
                 <ImageView
                     android:id="@+id/icon31"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_pin"
                     app:tint="@color/quantum_grey"
@@ -395,14 +397,15 @@
 
                 <ImageView
                     android:id="@+id/icon41"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="250dp"
+                    android:layout_marginLeft="263dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_pin"
-                    app:tint="@color/yellow"
+                    app:tint="@color/yellow_strong"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -412,7 +415,7 @@
             <RelativeLayout
                 android:id="@+id/scroll3"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="110dp"
                 android:layout_below="@id/scroll2"
                 android:background="@color/blue">
 
@@ -430,12 +433,14 @@
                 <ProgressBar
                     android:id="@+id/progressBar3"
                     style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:layout_marginEnd="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="25dp"
                     android:background="@color/black"
-                    android:progress="23"
+                    android:progress="22"
                     app:layout_constraintBottom_toBottomOf="@+id/textA"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -445,21 +450,21 @@
                     android:id="@+id/progressNumber4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="76dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="110dp"
+                    android:layout_marginTop="18dp"
                     android:text="7/30"
                     android:textColor="@color/white"
-                    android:textSize="8sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/iconA"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
@@ -472,27 +477,28 @@
 
                 <ImageView
                     android:id="@+id/icon21A"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="88dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
-
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/orange"/>
+                    app:tint="@color/orange_strong"/>
 
                 <ImageView
                     android:id="@+id/icon31A"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -503,24 +509,25 @@
 
                 <ImageView
                     android:id="@+id/icon41A"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="250dp"
+                    android:layout_marginLeft="263dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_check"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/yellow" />
+                    app:tint="@color/yellow_strong" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/scroll4"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="110dp"
                 android:layout_below="@id/scroll3">
 
                 <TextView
@@ -537,6 +544,8 @@
                 <ProgressBar
                     android:id="@+id/progressBar4"
                     style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:layout_marginEnd="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:layout_marginStart="24dp"
@@ -552,21 +561,21 @@
                     android:id="@+id/progressNumber5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="76dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="18dp"
                     android:text="0/1"
                     android:textColor="@color/white"
-                    android:textSize="8sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/iconR"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
@@ -578,10 +587,11 @@
 
                 <ImageView
                     android:id="@+id/icon21R"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
+                    android:alpha="0.5"
+                    android:layout_marginLeft="88dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
@@ -589,15 +599,16 @@
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/orange"/>
+                    app:tint="@color/orange_strong"/>
 
                 <ImageView
                     android:id="@+id/icon31R"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -608,24 +619,25 @@
 
                 <ImageView
                     android:id="@+id/icon41R"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="250dp"
+                    android:layout_marginLeft="263dp"
                     android:layout_marginTop="40dp"
+                    android:alpha="0.5"
                     android:foregroundGravity="center"
                     android:src="@drawable/ic_action_repeat"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/yellow"/>
+                    app:tint="@color/yellow_strong"/>
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/scroll5"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="110dp"
                 android:layout_below="@id/scroll4"
                 android:background="@color/blue">
 
@@ -643,6 +655,8 @@
                 <ProgressBar
                     android:id="@+id/progressBar6"
                     style="?android:attr/progressBarStyleHorizontal"
+                    android:progressDrawable="@drawable/progressbar"
+                    android:layout_marginEnd="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
                     android:layout_marginStart="24dp"
@@ -658,21 +672,21 @@
                     android:id="@+id/progressNumber6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="76dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="18dp"
                     android:text="0/1"
                     android:textColor="@color/white"
-                    android:textSize="8sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/icon21H"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="0dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
                     app:srcCompat="@drawable/book"
@@ -684,27 +698,29 @@
 
                 <ImageView
                     android:id="@+id/icon22H"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginLeft="88dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
+                    android:alpha="0.5"
                     app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/orange"/>
+                    app:tint="@color/orange_strong"/>
 
                 <ImageView
                     android:id="@+id/icon23H"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="175dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
+                    android:alpha="0.5"
                     app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
@@ -714,18 +730,19 @@
 
                 <ImageView
                     android:id="@+id/icon2H"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="250dp"
+                    android:layout_marginLeft="263dp"
                     android:layout_marginTop="40dp"
                     android:foregroundGravity="center"
+                    android:alpha="0.5"
                     app:srcCompat="@drawable/book"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/yellow"/>
+                    app:tint="@color/yellow_strong"/>
             </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
