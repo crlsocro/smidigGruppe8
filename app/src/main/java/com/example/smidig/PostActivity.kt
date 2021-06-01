@@ -26,6 +26,7 @@ class PostActivity : AppCompatActivity() {
     private var currentIList: ArrayList<Info>? = null
     private var selectedOption: Int = 0
 
+    //Navigation via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -53,6 +54,7 @@ class PostActivity : AppCompatActivity() {
         setContentView(R.layout.activity_post)
         currentIList = InfoConstants.getInfo()
         setInfo()
+        //Send information via intent
         var completeBtn = findViewById<ImageView>(R.id.buttonBG)
         completeBtn.setOnClickListener {
             val i = Intent(this, QuizActivity::class.java)
@@ -60,16 +62,17 @@ class PostActivity : AppCompatActivity() {
             i.putExtra("value", clickedPin)
             startActivity(i)
         }
+        //Onclick
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
-
+        //Onclick
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, RouteActivity::class.java)
             startActivity(i)
         }
 
-        //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
+        //Media player is inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
         val mediaPlayer = MediaPlayer.create(this, R.raw.example1)
         var seekBar = findViewById<SeekBar>(R.id.seekBar)
         seekBar.progress = 0
@@ -106,6 +109,7 @@ class PostActivity : AppCompatActivity() {
             seekBar.progress = 0
         }
 
+        //Onclick for popup info
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
@@ -116,6 +120,7 @@ class PostActivity : AppCompatActivity() {
     }
 
     private fun setInfo() {
+        //Check witch pin is clicked and post the correct info and answers from the InfoConstants object
         mCurrentP = 1
         val info = currentIList!![mCurrentP - 1]
         val infoText = findViewById<TextView>(R.id.postParapraghText)

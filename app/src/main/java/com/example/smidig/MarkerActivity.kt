@@ -14,9 +14,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.History.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
+//Most of the code in this activity is inspired from https://developers.google.com/maps/documentation/android-sdk/marker
 class MarkerActivity : AppCompatActivity() {
 
+    //Navigation through screens via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -36,7 +37,6 @@ class MarkerActivity : AppCompatActivity() {
             }
         }
         false
-
     }
 
  //https://developers.google.com/maps/documentation/android-sdk/marker

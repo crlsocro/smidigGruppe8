@@ -14,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 
 public abstract class PermissionUtils {
 
-//https://developers.google.com/maps/documentation
+//Most of the code in this activity is inspired from https://developers.google.com/maps/documentation
     public static void requestPermission(AppCompatActivity activity, int requestId,
                                          String permission, boolean finishActivity) {
         if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {

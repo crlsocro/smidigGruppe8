@@ -20,7 +20,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
+//Most of the code in this Activity is inspired from https://developers.google.com/maps/documentation
 class RouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
 GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
     ActivityCompat.OnRequestPermissionsResultCallback,
@@ -96,9 +96,9 @@ GoogleMap.OnMarkerClickListener {
     }
     
     override fun onMapReady(googleMap: GoogleMap?) {
-
         val markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
 
+        //All below is inspired from the documentation
         map = googleMap ?: return
         map.setMinZoomPreference(13f)
         map.setOnMarkerClickListener(this)
