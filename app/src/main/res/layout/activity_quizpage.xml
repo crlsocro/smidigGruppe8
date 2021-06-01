@@ -54,6 +54,7 @@
             app:layout_constraintTop_toTopOf="@+id/backIcon"
             app:srcCompat="@drawable/backarrow" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
