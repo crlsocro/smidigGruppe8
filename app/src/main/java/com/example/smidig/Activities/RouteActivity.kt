@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.Activities
 
 import android.Manifest
 import android.content.Intent
@@ -11,10 +11,10 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.example.smidig.History.HistoryActivity
+import com.example.smidig.PermissionUtils
+import com.example.smidig.R
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
-import com.example.smidig.History.InfoActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -162,8 +162,8 @@ GoogleMap.OnMarkerClickListener {
         } else {
             // Permission to access the location is missing. Show rationale and request permission
             PermissionUtils.requestPermission(
-                this, LOCATION_PERMISSION_REQUEST_CODE,
-                Manifest.permission.ACCESS_FINE_LOCATION, true
+                    this, LOCATION_PERMISSION_REQUEST_CODE,
+                    Manifest.permission.ACCESS_FINE_LOCATION, true
             )
         }
     }
@@ -189,10 +189,10 @@ GoogleMap.OnMarkerClickListener {
             return
         }
         if (PermissionUtils.isPermissionGranted(
-                permissions,
-                grantResults,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            )
+                        permissions,
+                        grantResults,
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                )
         ) {
             // Enable the my location layer if the permission has been granted.
             enableMyLocation()

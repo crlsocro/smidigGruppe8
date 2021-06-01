@@ -1,14 +1,13 @@
-package com.example.smidig
+package com.example.smidig.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.smidig.R
 import com.example.smidig.database.Login
 import com.example.smidig.database.LoginDao
 import com.example.smidig.database.MultiDatabase
-import com.example.smidig.database.Quiz
 
 
 class SignUpActivity : AppCompatActivity() {

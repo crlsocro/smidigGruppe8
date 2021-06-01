@@ -1,15 +1,13 @@
-package com.example.smidig.History
+package com.example.smidig.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.RelativeLayout
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.smidig.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -25,7 +23,7 @@ class HistoryActivity : AppCompatActivity(){
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@HistoryActivity,HistoryActivity::class.java)
+                val intent = Intent(this@HistoryActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

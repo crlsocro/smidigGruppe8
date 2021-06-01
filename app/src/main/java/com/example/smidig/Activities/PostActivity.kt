@@ -1,20 +1,15 @@
-package com.example.smidig
+package com.example.smidig.Activities
 
-import android.content.ClipData
 import android.content.Intent
 import android.media.AudioManager
-import android.media.Image
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.*
-import com.example.smidig.History.HistoryActivity
 import com.example.smidig.History.Info
 import com.example.smidig.History.InfoConstants
-import com.example.smidig.quiz.Constants
-import com.example.smidig.quiz.Questions
-import com.example.smidig.quiz.QuizActivity
+import com.example.smidig.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 

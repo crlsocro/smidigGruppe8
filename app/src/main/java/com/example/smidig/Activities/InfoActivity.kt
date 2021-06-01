@@ -1,4 +1,4 @@
-package com.example.smidig.History
+package com.example.smidig.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,6 @@ import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
-import com.example.smidig.Profile.ProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 //The InfoActivity is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4896s
@@ -27,7 +26,7 @@ class InfoActivity: AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.history -> {
-                val intent = Intent(this@InfoActivity,HistoryActivity::class.java)
+                val intent = Intent(this@InfoActivity, HistoryActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }

@@ -1,4 +1,4 @@
-package com.example.smidig.History
+package com.example.smidig.Activities
 
 import android.Manifest
 import android.content.Intent
@@ -19,7 +19,6 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.lang.Error
 
 //Most of the code is from the https://developers.google.com/maps/documentation
 

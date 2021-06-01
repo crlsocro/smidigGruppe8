@@ -9,7 +9,7 @@
     android:layout_gravity="center"
     android:background="@color/dark_blue"
     android:orientation="vertical"
-    tools:context=".quiz.QuizActivity">
+    tools:context=".Activities.QuizActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

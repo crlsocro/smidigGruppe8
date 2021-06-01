@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import android.widget.TextView
-import com.example.smidig.Profile.ProfileActivity
+import com.example.smidig.R
 import com.example.smidig.database.*
 
 

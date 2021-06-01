@@ -13,26 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Smidig">
-        <activity android:name=".History.HistoryRouteActivity"></activity>
-        <activity android:name=".PostActivity" />
+        <activity android:name=".Activities.HistoryRouteActivity"></activity>
+        <activity android:name=".Activities.PostActivity" />
         <activity
-            android:name=".SigninActivity"
+            android:name=".Activities.SigninActivity"
             android:label="Login" />
-        <activity android:name=".RouteActivity" />
-        <activity android:name=".SummaryActivity" />
-        <activity android:name=".MapsActivity" />
+        <activity android:name=".Activities.RouteActivity" />
+        <activity android:name=".Activities.SummaryActivity" />
+        <activity android:name=".Activities.MapsActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBjL_V5WvSQ3XTrsg1FB125DnTkX7Zz6sk" />
 
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".Profile.ProfileActivity" />
-        <activity android:name=".MarkerActivity" />
-        <activity android:name=".quiz.QuizActivity" />
-        <activity android:name=".History.HistoryActivity" />
-        <activity android:name=".History.InfoActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".Activities.SignUpActivity" />
+        <activity android:name=".Activities.ProfileActivity" />
+        <activity android:name=".Activities.MarkerActivity" />
+        <activity android:name=".Activities.QuizActivity" />
+        <activity android:name=".Activities.HistoryActivity" />
+        <activity android:name=".Activities.InfoActivity" />
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

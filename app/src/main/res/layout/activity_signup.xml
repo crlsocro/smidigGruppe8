@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
     android:orientation="vertical"
-    tools:context=".SignUpActivity">
+    tools:context=".Activities.SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark_blue"
-        tools:context=".SigninActivity">
+        tools:context=".Activities.SigninActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"

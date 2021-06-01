@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,11 @@ import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smidig.History.HistoryActivity
+import com.example.smidig.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 //Most of the code in this activity is inspired from https://developers.google.com/maps/documentation/android-sdk/marker

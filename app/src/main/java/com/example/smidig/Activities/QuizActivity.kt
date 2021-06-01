@@ -1,4 +1,4 @@
-package com.example.smidig.quiz
+package com.example.smidig.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,10 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.*
-import com.example.smidig.History.HistoryActivity
-import com.example.smidig.History.HistoryRouteActivity
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
-import com.example.smidig.database.Quiz
-import com.example.smidig.database.QuizDao
+import com.example.smidig.quiz.Constants
+import com.example.smidig.quiz.Questions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 //The QuizActivity is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4064s&ab_channel=tutorialsEU

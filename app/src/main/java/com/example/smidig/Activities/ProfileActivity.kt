@@ -1,13 +1,10 @@
-package com.example.smidig.Profile
+package com.example.smidig.Activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.smidig.History.HistoryActivity
-import com.example.smidig.MapsActivity
 import com.example.smidig.R
-import com.example.smidig.SigninActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ProfileActivity: AppCompatActivity() {

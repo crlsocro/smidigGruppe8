@@ -1,4 +1,4 @@
-package com.example.smidig
+package com.example.smidig.Activities
 
 import android.Manifest
 import android.content.Intent
@@ -11,10 +11,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
-import com.example.smidig.History.HistoryActivity
 import com.example.smidig.PermissionUtils.PermissionDeniedDialog.newInstance
 import com.example.smidig.PermissionUtils.isPermissionGranted
 import com.example.smidig.PermissionUtils.requestPermission
+import com.example.smidig.R
 import com.example.smidig.database.MarkerDao
 import com.example.smidig.database.MultiDatabase
 import com.google.android.gms.maps.GoogleMap
