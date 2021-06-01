@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HistoryActivity : AppCompatActivity(){
 
+    //Navigation through screens via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -39,24 +40,29 @@ class HistoryActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_history)
+
+        //Hide standard navigation bar
         supportActionBar?.hide()
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation7)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
+        //Header go back button on screen
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         }
 
+        //Onclick on image
         var gronlandBtn = findViewById<RelativeLayout>(R.id.scroll1)
         gronlandBtn.setOnClickListener {
             val i = Intent(this, InfoActivity::class.java)
             startActivity(i)
         }
+
+        //Popup with onclick
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)

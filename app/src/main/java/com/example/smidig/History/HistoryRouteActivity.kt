@@ -21,11 +21,14 @@ import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.lang.Error
 
+//Most of the code is from the https://developers.google.com/maps/documentation
+
 class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback,
         GoogleMap.OnMarkerClickListener {
 
+    //Set markers
     private var permissionDenied = false
     private lateinit var map: GoogleMap
     var mrkr = MarkerOptions()
@@ -59,6 +62,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation3)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
+        //Onclick on goBack and infoBtn
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, InfoActivity::class.java)
@@ -74,6 +78,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
         }
     }
 
+    //Navigation through footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -96,6 +101,7 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
 
     }
 
+    //Create map
     override fun onMapReady(googleMap: GoogleMap?) {
 
         val markerDao: MarkerDao = MultiDatabase.get(this).getMDao()

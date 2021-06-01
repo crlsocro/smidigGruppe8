@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ProfileActivity: AppCompatActivity() {
 
+    //Navigation through screens via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -37,6 +38,7 @@ class ProfileActivity: AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         supportActionBar?.hide()
 
+        //Onclick
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation8)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)

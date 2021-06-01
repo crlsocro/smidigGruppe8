@@ -34,7 +34,6 @@ class SummaryActivity : AppCompatActivity() {
         false
 
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_summary)
@@ -46,7 +45,6 @@ class SummaryActivity : AppCompatActivity() {
         mapBtn.setOnClickListener {
             toMap()
         }
-
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
@@ -54,7 +52,6 @@ class SummaryActivity : AppCompatActivity() {
                 "Her ser du hvordan denne løypen gikk for deg \n",
                 Toast.LENGTH_SHORT).show()
         }
-
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, MapsActivity::class.java)
@@ -62,7 +59,6 @@ class SummaryActivity : AppCompatActivity() {
         }
 
     }
-
     private fun toMap() {
         val intent = Intent(this, MapsActivity::class.java).apply {
         }

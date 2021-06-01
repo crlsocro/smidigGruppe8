@@ -15,9 +15,10 @@ import com.example.smidig.*
 import com.example.smidig.Profile.ProfileActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+//The InfoActivity is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4896s
 
 class InfoActivity: AppCompatActivity() {
-
+    //Navigation through screens via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -45,6 +46,7 @@ class InfoActivity: AppCompatActivity() {
         setContentView(R.layout.activity_info)
         supportActionBar?.hide()
 
+        //Onclick on goBack and infoBtn
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation4)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
@@ -54,6 +56,7 @@ class InfoActivity: AppCompatActivity() {
             startActivity(i)
         }
 
+        //Setting up webview, inspired by https://developers.google.com/maps/documentation
         var webView = findViewById<WebView>(R.id.pinMap)
         webView.setInitialScale(1)
         webView.webChromeClient = WebChromeClient()
@@ -67,6 +70,7 @@ class InfoActivity: AppCompatActivity() {
 
         webView.loadUrl("https://www.google.com/maps/d/embed?mid=1JKsxtkyA7Opg17O2bQ0iOGjaGJJKXqJo")
 
+        //Onclick on complete to go forward to next screen and onclick to popup
         var completeBtn = findViewById<Button>(R.id.completeBtn)
         completeBtn.setOnClickListener{
             val i = Intent(this, HistoryRouteActivity::class.java)

@@ -1,5 +1,7 @@
 package com.example.smidig.History
 
+//This part is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4896s
+
 object InfoConstants {
     fun getInfo(): ArrayList<Info>{
         val infoList = ArrayList<Info>()

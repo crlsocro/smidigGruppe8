@@ -39,7 +39,7 @@ class MarkerActivity : AppCompatActivity() {
 
     }
 
-
+ //https://developers.google.com/maps/documentation/android-sdk/marker
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marker)
