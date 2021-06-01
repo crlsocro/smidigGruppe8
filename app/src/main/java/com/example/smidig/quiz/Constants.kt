@@ -1,5 +1,7 @@
 package com.example.smidig.quiz
 
+//This part is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4896s
+
 object Constants {
     fun getQuestions(): ArrayList<Questions>{
         val qList = ArrayList<Questions>()

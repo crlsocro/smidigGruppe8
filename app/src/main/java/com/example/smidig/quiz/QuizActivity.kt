@@ -14,10 +14,10 @@ import com.example.smidig.database.Quiz
 import com.example.smidig.database.QuizDao
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
+//The QuizActivity is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4064s&ab_channel=tutorialsEU
 class QuizActivity: AppCompatActivity() {
 
-
+    //Navigation through screens via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -51,6 +51,7 @@ class QuizActivity: AppCompatActivity() {
         currentQList = Constants.getQuestions()
         setQuestion()
 
+        //Onclick to buttons
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation5)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
@@ -69,27 +70,23 @@ class QuizActivity: AppCompatActivity() {
 
     }
 
+    //Function for posting correct question to the marker
     private fun setQuestion() {
         mCurrentP = 1
         val question = currentQList!![mCurrentP - 1]
+
+        //Fetching the different Text's and Buttons from the layout
         val questionView = findViewById<TextView>(R.id.question)
         val optionOne = findViewById<TextView>(R.id.option_one)
         val optionTwo = findViewById<TextView>(R.id.option_two)
         val optionThree = findViewById<TextView>(R.id.option_three)
         val optionFour = findViewById<TextView>(R.id.option_four)
-
-        //var radioButton = findViewById<RadioGroup>(R.id.radioGroup)
        var radioButton1 = findViewById<RadioButton>(R.id.option_one)
        var radioButton2 = findViewById<RadioButton>(R.id.option_two)
        var radioButton3 = findViewById<RadioButton>(R.id.option_three)
        var radioButton4 = findViewById<RadioButton>(R.id.option_four)
 
-        /*optionOne.setOnClickListener(this)
-        optionTwo.setOnClickListener(this)
-        optionThree.setOnClickListener(this)
-        optionFour.setOnClickListener(this)*/
-
-
+        //Check witch pin is clicked and post the correct question and answers from the Constants object
         val clickedPin = intent.getStringExtra("value")
         when (clickedPin) {
             "1" -> {
@@ -184,6 +181,7 @@ class QuizActivity: AppCompatActivity() {
             }
         }
 
+        //Jump over button checks previous pin to send via intent to correct page
         var jumpOver = findViewById<Button>(R.id.jumpOver)
         jumpOver.setOnClickListener{
             var markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
@@ -220,6 +218,7 @@ class QuizActivity: AppCompatActivity() {
                 }
             }
         }
+        //Check if all pins are done and sends it to summaryActivity, if not it goes back to RouteActivity
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
             var markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
@@ -257,6 +256,7 @@ class QuizActivity: AppCompatActivity() {
 
         }
     }
+//Inspired by https://developer.android.com/guide/topics/ui/controls/radiobutton
     fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
             // Is the button now checked?
@@ -284,5 +284,3 @@ class QuizActivity: AppCompatActivity() {
         }
     }
 }
-
-//https://www.youtube.com/watch?v=b21fiIyOW4A&t=4064s&ab_channel=tutorialsEU

@@ -88,11 +88,5 @@ class SigninActivity : AppCompatActivity() {
             val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         }
-
     }
-
 }
-//input username&password
-//check database for that user
-//check if password matches
-//Send to next screen if true, makeToast if not

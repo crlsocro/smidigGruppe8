@@ -23,11 +23,13 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+//Most of the code in this Activity is inspired from https://developers.google.com/maps/documentation
 
 class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListener,
         GoogleMap.OnMyLocationClickListener, OnMapReadyCallback, OnRequestPermissionsResultCallback,
         GoogleMap.OnMarkerClickListener {
 
+    //Navigation through screens via footer
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -60,6 +62,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
 
+        //Onclick
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation3)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
 
@@ -79,6 +82,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
+        //All below is inspired from the documentation
         map = googleMap ?: return
         map.setMinZoomPreference(13f)
         map.setOnMarkerClickListener(this)
