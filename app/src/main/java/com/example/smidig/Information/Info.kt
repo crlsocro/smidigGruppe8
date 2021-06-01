@@ -1,4 +1,4 @@
-package com.example.smidig.History
+package com.example.smidig.Information
 
 data class Info (
         val id: Int,

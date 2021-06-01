@@ -9,52 +9,92 @@ object Constants {
                 1,
                 "Hvem var klosteret viet til?",
                 "Den hellige Maria",
-                "Gud",
-                "Kongen",
-                "Ingen",
+                "Den Hellige Ånd",
+                "Jesus Kristus",
                 1
         )
         qList.add(q1)
         val q2 = Questions(
                 2,
                 "Hvem var Norges første kvinnelige redaktør?",
-                "Amalie skram",
-                "Kirsten Flagstad",
-                "Josephine Thrane",
                 "Gro Harlem Brundtland",
-                2
+                "Kristine Bonnevie",
+                "Josephine Thrane",
+                3
         )
         qList.add(q2)
         val q3 = Questions(
                 3,
                 "Når ble broen oppførst for første gang?",
-                "1501",
-                "1885",
-                "1702",
+                "1836",
+                "1942",
                 "1654",
-                4
+                3
         )
         qList.add(q3)
         val q4 = Questions(
                 4,
                 "Når ble kirkegården nedlagt?",
-                "1880",
-                "1885",
-                "1702",
-                "1654",
+                "ca 1880",
+                "ca 1910",
+                "ca 1860",
                 1
         )
         qList.add(q4)
         val q5 = Questions(
                 5,
                 " Når ble romanen ulvehiet utgitt?",
-                "1980",
-                "1880",
                 "1919",
-                "1910",
-                3
+                "1980",
+                "1819",
+                1
         )
         qList.add(q5)
+        val q6 = Questions(
+                6,
+                "Hvem ble Oslo bys skytsengel?",
+                "Den hellige Maria",
+                "St Hallvard",
+                "St kristoffer",
+                2
+        )
+        qList.add(q6)
+        val q7 = Questions(
+                7,
+                "Hvem startet byggingen av Akershus festning?",
+                "Håkon 5",
+                "Olav 1",
+                "Freya 2",
+                1
+        )
+        qList.add(q7)
+        val q8 = Questions(
+                8,
+                "Hvorfor ble store deler av Oslo ødelagt?",
+                "Jordskjelv",
+                "Flom",
+                "Brann",
+                3
+        )
+        qList.add(q8)
+        val q9 = Questions(
+                9,
+                "Hvilken krig ble avsluttet rundt 1700-tallet?",
+                "Den store svenske krigen",
+                "Den store nordiske krige",
+                "Den lille norske krigen",
+                2
+        )
+        qList.add(q9)
+        val q10 = Questions(
+                10,
+                "Hvilken elv ble viktig for bygging av industri?",
+                "Akerselva",
+                "Oslofjorden",
+                "Glomma",
+                1
+        )
+        qList.add(q10)
         return qList
     }
 }

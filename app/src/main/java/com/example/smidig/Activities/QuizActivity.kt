@@ -78,11 +78,9 @@ class QuizActivity: AppCompatActivity() {
         val optionOne = findViewById<TextView>(R.id.option_one)
         val optionTwo = findViewById<TextView>(R.id.option_two)
         val optionThree = findViewById<TextView>(R.id.option_three)
-        val optionFour = findViewById<TextView>(R.id.option_four)
        var radioButton1 = findViewById<RadioButton>(R.id.option_one)
        var radioButton2 = findViewById<RadioButton>(R.id.option_two)
        var radioButton3 = findViewById<RadioButton>(R.id.option_three)
-       var radioButton4 = findViewById<RadioButton>(R.id.option_four)
 
         //Check witch pin is clicked and post the correct question and answers from the Constants object
         val clickedPin = intent.getStringExtra("value")
@@ -94,7 +92,6 @@ class QuizActivity: AppCompatActivity() {
                 optionOne.text = question?.optionOne
                 optionTwo.text = question?.optionTwo
                 optionThree.text = question?.optionThree
-                optionFour.text = question?.optionFour
             }
             "2" -> {
                 mCurrentP = 2
@@ -103,7 +100,6 @@ class QuizActivity: AppCompatActivity() {
                 optionOne.text = question2?.optionOne
                 optionTwo.text = question2?.optionTwo
                 optionThree.text = question2?.optionThree
-                optionFour.text = question2?.optionFour
             }
             "3" -> {
                 mCurrentP = 3
@@ -112,7 +108,6 @@ class QuizActivity: AppCompatActivity() {
                 optionOne.text = question3?.optionOne
                 optionTwo.text = question3?.optionTwo
                 optionThree.text = question3?.optionThree
-                optionFour.text = question3?.optionFour
             }
             "4" -> {
                 mCurrentP = 4
@@ -121,7 +116,6 @@ class QuizActivity: AppCompatActivity() {
                 optionOne.text = question4?.optionOne
                 optionTwo.text = question4?.optionTwo
                 optionThree.text = question4?.optionThree
-                optionFour.text = question4?.optionFour
             }
             "5" -> {
                 mCurrentP = 5
@@ -130,52 +124,46 @@ class QuizActivity: AppCompatActivity() {
                 optionOne.text = question5?.optionOne
                 optionTwo.text = question5?.optionTwo
                 optionThree.text = question5?.optionThree
-                optionFour.text = question5?.optionFour
             }
             "6" -> {
-                mCurrentP = 1
+                mCurrentP = 6
                 val question = currentQList!![mCurrentP - 1]
                 questionView.text = question!!.question
                 optionOne.text = question?.optionOne
                 optionTwo.text = question?.optionTwo
                 optionThree.text = question?.optionThree
-                optionFour.text = question?.optionFour
             }
             "7" -> {
-                mCurrentP = 2
+                mCurrentP = 7
                 val question2 = currentQList!![mCurrentP - 1]
                 questionView.text = question2!!.question
                 optionOne.text = question2?.optionOne
                 optionTwo.text = question2?.optionTwo
                 optionThree.text = question2?.optionThree
-                optionFour.text = question2?.optionFour
             }
             "8" -> {
-                mCurrentP = 3
+                mCurrentP = 8
                 val question3 = currentQList!![mCurrentP - 1]
                 questionView.text = question3!!.question
                 optionOne.text = question3?.optionOne
                 optionTwo.text = question3?.optionTwo
                 optionThree.text = question3?.optionThree
-                optionFour.text = question3?.optionFour
             }
             "9" -> {
-                mCurrentP = 4
+                mCurrentP = 9
                 val question4 = currentQList!![mCurrentP - 1]
                 questionView.text = question4!!.question
                 optionOne.text = question4?.optionOne
                 optionTwo.text = question4?.optionTwo
                 optionThree.text = question4?.optionThree
-                optionFour.text = question4?.optionFour
             }
             "10" -> {
-                mCurrentP = 5
+                mCurrentP = 10
                 val question5 = currentQList!![mCurrentP - 1]
                 questionView.text = question5!!.question
                 optionOne.text = question5?.optionOne
                 optionTwo.text = question5?.optionTwo
                 optionThree.text = question5?.optionThree
-                optionFour.text = question5?.optionFour
             }
         }
 
@@ -273,10 +261,6 @@ class QuizActivity: AppCompatActivity() {
                 R.id.option_three ->
                     if (checked) {
                         selectedOption = 2
-                    }
-                R.id.option_four ->
-                    if (checked) {
-                        selectedOption = 3
                     }
             }
         }

@@ -60,9 +60,7 @@ class SummaryActivity : AppCompatActivity() {
             val i = Intent(this, MapsActivity::class.java)
             startActivity(i)
         }
-
     }
-
     private fun toMap() {
         val intent = Intent(this, MapsActivity::class.java).apply {
         }

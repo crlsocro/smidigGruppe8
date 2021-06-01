@@ -186,18 +186,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Beskrivelse: \n
-
-
-
-
-            Dette er en løype som omhandler de mange historiske bygningene. Disse er markert med blå skilt og har en tekst om hvem eller hva som skjedde der, og når det skjedde. Noen er mordere, andre er forfrattere."
+            android:text="Dette er en løype som omhandler de mange historiske bygningene. Disse er markert med blå skilt og har en tekst om hvem eller hva som skjedde der, og når det skjedde. Noen er mordere, andre er forfrattere."
             android:textStyle="bold"
             android:textSize="20sp"
             android:background="@drawable/edittextstyling"
             android:elevation="5dp"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:textColor="@color/yellow">
         </TextView>

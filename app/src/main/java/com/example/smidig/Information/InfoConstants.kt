@@ -1,4 +1,4 @@
-package com.example.smidig.History
+package com.example.smidig.Information
 
 //This part is inspired from https://www.youtube.com/watch?v=b21fiIyOW4A&t=4896s
 
@@ -94,11 +94,71 @@ object InfoConstants {
                         "de om sig selv, naar de snakker med andre eller naar \n" +
                         "de er hos kjøbmændene.»\n"
         )
+        val info6 = Info(
+                6,
+                "Oslo fra år 1000",
+                "Oslo fortsatte å være strandsted og markedsplass \n" +
+                        "for de rike jordbruksbygdene i det nåværende \n" +
+                        "Groruddalen. Kong Harald lot bygge Mariakirken på et\n" +
+                        " nes nede ved sjøen. Ruinene av denne finnes inne på\n" +
+                        " jernbaneområdet på Loenga; landet har hevet seg \n" +
+                        "betydelig i tiden som har gått.\n" +
+                        "\n" +
+                        "Under Olav Kyrre (1067–1093) ble Oslo bispesete og\n" +
+                        " religiøst sentrum for Østlandet. St. Hallvard ble byens\n" +
+                        " skytshelgen. I 1147 ble Hovedøya kloster anlagt. \n" +
+                        "Kirkene og klostrene ble store jordeiere og fikk stor \n" +
+                        "betydning for den økonomiske utviklingen."
+        )
+        val info7 = Info(
+                7,
+                "Oslo i middelalderen",
+                "Middelalderens Oslo nådde sitt høydepunkt under Håkon 5 (1299–1319), som startet \n" +
+                        "byggingen av Akershus festning. Han var den første av kongene som bodde permanent i \n" +
+                        "byen, noe som førte til at Oslo senere er blitt regnet som hovedstad fra hans tid. På \n" +
+                        "slutten av 1200-tallet slo hanseatiske kjøpmenn fra Rostock seg ned i Oslo og fikk stor \n" +
+                        "innflytelse. Svartedauden kom til Oslo i 1349, og byen stagnerte i likhet med andre byer i \n" +
+                        "Europa. Kirkens inntekter fra jordeiendommene gikk sterkt tilbake."
+        )
+        val info8 = Info(
+                8,
+                "Oslo etter 1624",
+                "Med sine trehus og smale gater var Oslo sterkt utsatt for brann, og gjennom århundrene \n"+
+                        "var det flere store branner som la større eller mindre deler av byen i aske. Også etter at \n" +
+                        "oppgangstidene var begynt på 1500-tallet var det nye ødeleggende branner, men hver gang ble byen gjenoppbygd.\n" +
+                        "\n" +
+                        "Etter brannen i 1624, som varte i tre dager, bestemte Christian 4 at det gamle Oslo ikke \n" +
+                        "skulle gjenoppbygges. Han anla et gatenett i Akershagen inntil Akershus slott, og påla \n" +
+                        "Oslos borgere å flytte sin virksomhet til Christiania."
+        )
+        val info9 = Info(
+                9,
+                "Oslo på 1700-tallet",
+                "På 1700-tallet, etter den store nordiske krig, ble det ny fart på byens økonomiske vekst i \n" +
+                        "kjølvannet av skipsfart og oppblomstring av trelasthandelen. Gunstige konjunkturer og \n " +
+                        "økende pengeøkonomi førte til fremvekst av et handelspatriarkat. Gradvis endret byen \n " +
+                        "seg fra en militær- og embetsmannsby til en handelsby."
+        )
+        val info10 = Info(
+                10,
+                "Oslo på 1800-tallet",
+                "På 1800-tallet vokste flere statsinstitusjoner frem og understreket byens rolle som hovedstad. \n " +
+                        "De store handelsfamiliene led store tap etter Napoleonskrigene, og først ved midten av hundreåret kom næringslivet på fote igjen. \n "
+                        +"Fra 1840-årene foregikk det stor utbygging av industri, ikke minst rundt Akerselva.\n " +
+                        "Kulturelt ble Christiania også etter hvert landets kraftsentrum. \n " +
+                        "Ekspansjonen gjorde det nødvendig med flere byutvidelser på 1800-tallet. \n " +
+                        "Flere representative bygg ble reist i denne perioden, blant annet Slottet (1825–1848)."
+        )
         infoList.add(info1)
         infoList.add(info2)
         infoList.add(info3)
         infoList.add(info4)
         infoList.add(info5)
+        infoList.add(info6)
+        infoList.add(info7)
+        infoList.add(info8)
+        infoList.add(info9)
+        infoList.add(info10)
         return infoList
     }
 }

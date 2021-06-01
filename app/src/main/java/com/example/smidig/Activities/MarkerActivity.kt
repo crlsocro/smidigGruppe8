@@ -76,7 +76,7 @@ class MarkerActivity : AppCompatActivity() {
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
             val popUpToast = Toast.makeText(applicationContext,
-                "Klikk start for å følge denne løypen \n",
+                "Dette er en åpent tur du kan gå som du vil.\n",
                 Toast.LENGTH_SHORT).show()
         }
 

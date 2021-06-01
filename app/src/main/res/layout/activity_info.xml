@@ -122,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Grønland"
+            android:text="Oslo gjennom tidene"
             android:fontFamily="@font/retrojump"
             android:textColor="@color/yellow"
             android:textSize="55sp"
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_action_pin"
                 android:layout_toRightOf="@id/grade"
-                app:tint="@color/yellow"/>
+                app:tint="@color/green"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -188,12 +188,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Beskrivelse: \n
-
-
-
-
-            Dette er en løype som omhandler de mange historiske bygningene. Disse er markert med blå skilt og har en tekst om hvem eller hva som skjedde der, og når det skjedde. Noen er mordere, andre er forfrattere."
+            android:text="Dette er en løype som begir seg ut på Oslo sin historie igjennom tidene. Vi vil møte middelalderen, Håkon den 5. \n
+Vi skal innom Oslo på 16-17 og 1800-tallet. Vi skal også gå forbi operaen og igjennom Akershus festning
+før vi avslutter ved Akerselven på Grünerløkka
+"
             android:textStyle="bold"
             android:textSize="20sp"
             android:background="@drawable/edittextstyling"

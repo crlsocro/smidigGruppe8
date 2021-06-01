@@ -103,26 +103,25 @@
 
         <ImageView
             android:id="@+id/bannerIcon"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="330dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textAlignment="center"
             app:srcCompat="@drawable/banner" />
-
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="35dp"
             android:fontFamily="@font/retrojump"
-            android:text="Grønland"
+            android:text="Oslo gjennom tidene"
             android:textColor="@color/yellow"
-            android:textSize="75sp"
+            android:textSize="70sp"
             app:layout_constraintBottom_toBottomOf="@+id/bannerIcon"
             app:layout_constraintEnd_toEndOf="@+id/bannerIcon"
             app:layout_constraintStart_toStartOf="@+id/bannerIcon"
@@ -142,7 +141,7 @@
                 android:src="@drawable/ic_action_pin"
                 android:layout_marginTop="110dp"
                 android:layout_toRightOf="@id/grade"
-                app:tint="@color/yellow"/>
+                app:tint="@color/green"/>
     </RelativeLayout>
         <RelativeLayout
             android:id="@+id/scroll2"

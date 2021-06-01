@@ -31,23 +31,23 @@ class HistoryRouteActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonCl
     private var permissionDenied = false
     private lateinit var map: GoogleMap
     var mrkr = MarkerOptions()
-            .position(LatLng(59.909458, 10.768140))
+            .position(LatLng(59.910680, 10.767510))
             .title("6")
 
     var mrkr2 = MarkerOptions()
-            .position(LatLng(59.911830, 10.766780))
+            .position(LatLng(59.912013, 10.766369))
             .title("7")
 
     var mrkr3 = MarkerOptions()
-            .position(LatLng(59.913530, 10.757790))
+            .position(LatLng(59.908433, 10.746820))
             .title("8")
 
     var mrkr4 = MarkerOptions()
-            .position(LatLng(59.919950, 10.767640))
+            .position(LatLng(59.907877, 10.752341))
             .title("9")
 
     var mrkr5 = MarkerOptions()
-            .position(LatLng(59.914090, 10.766310))
+            .position(LatLng(59.918168, 10.756039))
             .title("10")
 
     val mrkrArray = arrayOf(mrkr, mrkr2, mrkr3, mrkr4, mrkr5)
