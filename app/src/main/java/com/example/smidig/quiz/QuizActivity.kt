@@ -21,7 +21,7 @@ class QuizActivity: AppCompatActivity() {
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
-                val intent = Intent(this@QuizActivity, SigninActivity::class.java)
+                val intent = Intent(this@QuizActivity, MapsActivity::class.java)
                 startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
@@ -31,11 +31,12 @@ class QuizActivity: AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.profile -> {
+                val intent = Intent(this@QuizActivity, SigninActivity::class.java)
+                startActivity(intent)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
-
     }
 
     private var mCurrentP: Int = 1
@@ -58,7 +59,6 @@ class QuizActivity: AppCompatActivity() {
             val i = Intent(this, HistoryRouteActivity::class.java)
             startActivity(i)
         }
-
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
@@ -184,29 +184,52 @@ class QuizActivity: AppCompatActivity() {
             }
         }
 
+        var jumpOver = findViewById<Button>(R.id.jumpOver)
+        jumpOver.setOnClickListener{
+            var markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
+            var check = 0
+            for (i in 1..5) {
+                if(markerDao.getMarker(i).clicked) {
+                    check += 1
+                } else {
+                    println(":(")
+                }
+
+                if(check == 5) {
+                    for (i in 1..5) {
+                        markerDao.setClicked(i, 0)
+                    }
+                    val i = Intent(this, SummaryActivity::class.java)
+                    startActivity(i)
+                } else if(clickedPin?.toInt() == 10) {
+                    for (i in 6..10) {
+                        markerDao.setClicked(i, 0)
+                    }
+                    val i = Intent(this, SummaryActivity::class.java)
+                    startActivity(i)
+                } else {
+                    if(clickedPin?.toInt()!! <= 5) {
+                        println(check)
+                        println("check")
+                        val i = Intent(this, RouteActivity::class.java)
+                        startActivity(i)
+                    } else {
+                        val i = Intent(this, HistoryRouteActivity::class.java)
+                        startActivity(i)
+                    }
+                }
+            }
+        }
         var submitBtn = findViewById<Button>(R.id.submitBtn)
         submitBtn.setOnClickListener {
-
             var markerDao : MarkerDao = MultiDatabase.get(this).getMDao()
-            /*
-            var quizDAO : QuizDao = MultiDatabase.get(this).getQDao()
-
-            var quizTest : Quiz = Quiz(0, "Test", "test","test")
-            quizDAO.addQuiz(quizTest)
-
-            var test : Quiz = quizDAO.getQuizWithQuizId(1)
-            println("test = " + test)
-            println("test.size")*/
-
             var check = 0
-
             for (i in 1..5) {
                 if(markerDao.getMarker(i).clicked) {
                    check += 1
                 } else {
                     println(":(")
                 }
-
                 if(check == 5) {
                     for (i in 1..5) {
                         markerDao.setClicked(i, 0)

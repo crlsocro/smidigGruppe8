@@ -69,11 +69,7 @@ class PostActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-
-
-
         //Inspired by https://www.youtube.com/watch?v=DaLPIC4NbYU&ab_channel=doctorcode
-
         val mediaPlayer = MediaPlayer.create(this, R.raw.example1)
         var seekBar = findViewById<SeekBar>(R.id.seekBar)
         seekBar.progress = 0
@@ -81,7 +77,6 @@ class PostActivity : AppCompatActivity() {
         val audioManager: AudioManager = getSystemService(AUDIO_SERVICE) as AudioManager
         var play = findViewById<ImageView>(R.id.play)
         play.setOnClickListener {
-
             if (!mediaPlayer.isPlaying) {
                 mediaPlayer.start()
                 play.setImageResource(R.drawable.ic_baseline_pause_24)
@@ -96,7 +91,6 @@ class PostActivity : AppCompatActivity() {
                     mediaPlayer.seekTo(progress)
                 }
             }
-
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
             }
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
