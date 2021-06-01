@@ -13,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SummaryActivity : AppCompatActivity() {
 
+    //Footer code takes you to the correct page when clicked
     private val navigation = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.homepage -> {
@@ -47,6 +48,7 @@ class SummaryActivity : AppCompatActivity() {
             toMap()
         }
 
+        //Makes a toast when clicking info button
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
@@ -55,6 +57,7 @@ class SummaryActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT).show()
         }
 
+        //Takes you to maps
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, MapsActivity::class.java)

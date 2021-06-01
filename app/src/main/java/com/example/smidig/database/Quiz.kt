@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//Creates a table for the quiz
+//Currently not used
 @Entity(tableName = "quiz_table")
 data class Quiz(
     @PrimaryKey(autoGenerate = true)

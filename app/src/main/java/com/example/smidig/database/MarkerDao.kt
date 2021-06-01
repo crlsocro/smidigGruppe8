@@ -2,6 +2,7 @@ package com.example.smidig.database
 
 import androidx.room.*
 
+//This DAO controls how to access the information
 @Dao
 interface MarkerDao {
     @Insert
@@ -12,6 +13,8 @@ interface MarkerDao {
 
     @Delete
     fun delete(marker: Marker)
+
+    //Several SQL commands to select and update markers/pins
 
     @Query("SELECT * FROM marker_table")
     fun getAllMarkers(): List<Marker>

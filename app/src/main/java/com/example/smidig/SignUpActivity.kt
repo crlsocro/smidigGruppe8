@@ -20,7 +20,7 @@ class SignUpActivity : AppCompatActivity() {
 
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
 
-
+        //Adds your new user to the database
         var submit = findViewById<ImageView>(R.id.buttonBG)
         submit.setOnClickListener {
 
@@ -36,6 +36,7 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        //Makes toast when clicking info button
         var infoBtn = findViewById<ImageView>(R.id.infoIcon)
         infoBtn.setOnClickListener{
             val popUp = PopupMenu(this, infoBtn)
@@ -44,6 +45,7 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT).show()
         }
 
+        //Takes you to the signin page
         val goBackBtn = findViewById<ImageView>(R.id.backIcon)
         goBackBtn.setOnClickListener {
             val i = Intent(this, SigninActivity::class.java)

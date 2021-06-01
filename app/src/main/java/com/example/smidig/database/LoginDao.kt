@@ -2,6 +2,7 @@ package com.example.smidig.database
 
 import androidx.room.*
 
+//the DAO is the way for the database to interact with our login entity
 @Dao
 interface LoginDao {
     @Insert

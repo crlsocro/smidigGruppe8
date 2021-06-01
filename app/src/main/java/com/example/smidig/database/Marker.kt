@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//Here we store the pins on the map. By storing it here we can add more pins and store progress
+
 @Entity(tableName = "marker_table")
 data class Marker(
     @PrimaryKey(autoGenerate = true)

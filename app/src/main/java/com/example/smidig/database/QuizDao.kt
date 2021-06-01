@@ -2,6 +2,8 @@ package com.example.smidig.database
 
 import androidx.room.*
 
+//DAO for quizzes
+//Currently not used
 @Dao
 interface QuizDao {
     @Insert

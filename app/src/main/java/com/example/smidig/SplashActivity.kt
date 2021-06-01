@@ -12,6 +12,7 @@ class SplashActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        //Waits two seconds then takes you to the main/maps screen
         Handler().postDelayed({
             val intent = Intent(this@SplashActivity, MapsActivity::class.java)
             startActivity(intent)
