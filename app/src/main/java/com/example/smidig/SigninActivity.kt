@@ -28,19 +28,14 @@ class SigninActivity : AppCompatActivity() {
         emailEditText.setText("keenHistorian")
         passwordEditText.setText("Historian")
 
-
-
         var loginDAO : LoginDao = MultiDatabase.get(this).getLDao()
         var user : Login = Login(0, "", "")
-
         try {
             user = Login(0, "keenHistorian", "Historian")
             loginDAO.addLogin(user)
         }catch (e : NullPointerException){
             println(e)
         }
-
-
         var btnSignin = findViewById<ImageView>(R.id.buttonBG)
         val btnRegister = findViewById<TextView>(R.id.register)
         btnSignin.setOnClickListener {

@@ -2,6 +2,7 @@ package com.example.smidig.Profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smidig.History.HistoryActivity
 import com.example.smidig.MapsActivity
@@ -30,9 +31,7 @@ class ProfileActivity: AppCompatActivity() {
             }
         }
         false
-
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -40,5 +39,10 @@ class ProfileActivity: AppCompatActivity() {
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation8)
         bottomNavigation.setOnNavigationItemSelectedListener(navigation)
+        val goBackBtn = findViewById<ImageView>(R.id.backIcon)
+        goBackBtn.setOnClickListener {
+            val i = Intent(this, SigninActivity::class.java)
+            startActivity(i)
+        }
     }
 }
