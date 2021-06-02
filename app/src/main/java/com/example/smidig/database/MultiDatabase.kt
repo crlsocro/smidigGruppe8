@@ -6,10 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 //This code creates and sets up the main part of the database
-@Database(entities = [Quiz::class, Marker::class, Login::class], version = 10)
+@Database(entities = [ Marker::class, Login::class], version = 11)
 abstract class MultiDatabase: RoomDatabase() {
 
-    abstract fun getQDao(): QuizDao
     abstract  fun getMDao(): MarkerDao
     abstract fun getLDao(): LoginDao
 
