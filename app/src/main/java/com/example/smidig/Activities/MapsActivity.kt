@@ -99,7 +99,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
             addMarker(
                     MarkerOptions()
                             .position(testMarker)
-                            .title("INSERT MARKER HERE")
+                            .title("GRØNLAND")
             )
         }
         map.setMapStyle(

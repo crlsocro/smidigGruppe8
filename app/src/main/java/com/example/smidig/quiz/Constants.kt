@@ -25,7 +25,7 @@ object Constants {
         qList.add(q2)
         val q3 = Questions(
                 3,
-                "Når ble broen oppførst for første gang?",
+                "Når ble broen oppført for første gang?",
                 "1836",
                 "1942",
                 "1654",
@@ -43,7 +43,7 @@ object Constants {
         qList.add(q4)
         val q5 = Questions(
                 5,
-                " Når ble romanen ulvehiet utgitt?",
+                " Når ble romanen Ulvehiet utgitt?",
                 "1919",
                 "1980",
                 "1819",
