@@ -84,7 +84,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
     override fun onMapReady(googleMap: GoogleMap?) {
         //All below is inspired from the documentation
         map = googleMap ?: return
-        map.setMinZoomPreference(13f)
+        map.setMinZoomPreference(12f)
         map.setOnMarkerClickListener(this)
         val osloCoordinates = LatLngBounds(
             LatLng(59.910, 10.720),
@@ -95,7 +95,7 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         googleMap.setOnMyLocationClickListener(this)
         enableMyLocation()
         googleMap.apply {
-            val testMarker = LatLng(59.910, 10.720)
+            val testMarker = LatLng(59.909263, 10.768427)
             addMarker(
                     MarkerOptions()
                             .position(testMarker)
