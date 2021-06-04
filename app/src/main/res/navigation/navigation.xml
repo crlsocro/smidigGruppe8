@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.navigation.NavigationViewi
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashActivity2">
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/splashActivity2">
+        <activity
+            android:id="@+id/splashActivity2"
+            android:name="com.example.smidig.Activities.SplashActivity"
+            android:label="activity_splash"
+            tools:layout="@layout/activity_splash" >
+            <action
+                android:id="@+id/action_splashActivity2_to_mapsActivity"
+                app:destination="@id/mapsActivity" />
+        </activity>
+        <activity
+            android:id="@+id/mapsActivity"
+            android:name="com.example.smidig.Activities.MapsActivity"
+            android:label="activity_maps"
+            tools:layout="@layout/activity_maps" >
+            <action
+                android:id="@+id/action_mapsActivity_to_historyActivity"
+                app:destination="@id/historyActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_markerActivity"
+                app:destination="@id/markerActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/routeActivity"
+            android:name="com.example.smidig.Activities.RouteActivity"
+            android:label="activity_route"
+            tools:layout="@layout/activity_route" >
+            <action
+                android:id="@+id/action_routeActivity_to_postActivity"
+                app:destination="@id/postActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/postActivity"
+            android:name="com.example.smidig.Activities.PostActivity"
+            android:label="activity_post"
+            tools:layout="@layout/activity_post" >
+            <action
+                android:id="@+id/action_postActivity_to_quizActivity"
+                app:destination="@id/quizActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/quizActivity"
+            android:name="com.example.smidig.Activities.QuizActivity"
+            android:label="activity_quizpage"
+            tools:layout="@layout/activity_quizpage" >
+            <action
+                android:id="@+id/action_quizActivity_to_summaryActivity"
+                app:destination="@id/summaryActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/summaryActivity"
+            android:name="com.example.smidig.Activities.SummaryActivity"
+            android:label="activity_summary"
+            tools:layout="@layout/activity_summary" />
+        <action
+            android:id="@+id/action_mapsActivity_to_signinActivity"
+            app:destination="@id/signinActivity" />
+        <activity
+            android:id="@+id/historyActivity"
+            android:name="com.example.smidig.Activities.HistoryActivity"
+            android:label="activity_history"
+            tools:layout="@layout/activity_history" >
+            <action
+                android:id="@+id/action_historyActivity_to_infoActivity2"
+                app:destination="@id/infoActivity2" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/markerActivity"
+            android:name="com.example.smidig.Activities.MarkerActivity"
+            android:label="activity_marker"
+            tools:layout="@layout/activity_marker" >
+            <action
+                android:id="@+id/action_markerActivity_to_routeActivity"
+                app:destination="@id/routeActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/infoActivity2"
+            android:name="com.example.smidig.Activities.InfoActivity"
+            android:label="activity_info"
+            tools:layout="@layout/activity_info" >
+            <action
+                android:id="@+id/action_infoActivity2_to_historyRouteActivity"
+                app:destination="@id/historyRouteActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/historyRouteActivity"
+            android:name="com.example.smidig.Activities.HistoryRouteActivity"
+            android:label="HistoryRouteActivity" >
+            <action
+                android:id="@+id/action_historyRouteActivity_to_postActivity"
+                app:destination="@id/postActivity" />
+            <action
+                android:id="@+id/action_mapsActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+        <activity
+            android:id="@+id/signinActivity"
+            android:name="com.example.smidig.Activities.SigninActivity"
+            android:label="activity_signin"
+            tools:layout="@layout/activity_signin" >
+            <action
+                android:id="@+id/action_signinActivity_to_profileActivity"
+                app:destination="@id/profileActivity" />
+            <action
+                android:id="@+id/action_signinActivity_to_signUpActivity"
+                app:destination="@id/signUpActivity" />
+        </activity>
+        <activity
+            android:id="@+id/profileActivity"
+            android:name="com.example.smidig.Activities.ProfileActivity"
+            android:label="activity_profile"
+            tools:layout="@layout/activity_profile" />
+        <activity
+            android:id="@+id/signUpActivity"
+            android:name="com.example.smidig.Activities.SignUpActivity"
+            android:label="activity_signup"
+            tools:layout="@layout/activity_signup" >
+            <action
+                android:id="@+id/action_signUpActivity_to_signinActivity"
+                app:destination="@id/signinActivity" />
+        </activity>
+    </navigation>
+</com.google.android.material.navigation.NavigationViewi>
